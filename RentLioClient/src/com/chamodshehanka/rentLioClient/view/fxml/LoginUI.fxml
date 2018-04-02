@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="665.0" prefWidth="1000.0" styleClass="background" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.LoginUIController">
+   <children>
+      <AnchorPane layoutX="100.0" layoutY="85.0" prefHeight="500.0" prefWidth="350.0" styleClass="container">
+         <children>
+            <AnchorPane prefHeight="60.0" prefWidth="350.0" styleClass="container-header">
+               <children>
+                  <Text fill="WHITE" layoutX="144.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN IN">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <JFXTextField focusColor="WHITE" labelFloat="true" layoutX="70.0" layoutY="97.0" promptText="USER NAME" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="244.0" layoutY="221.0" prefHeight="35.0" prefWidth="75.0" style="-fx-background-color: #2ecc71;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <AnchorPane layoutY="440.0" prefHeight="60.0" prefWidth="350.0" styleClass="container-footer" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="540.0" layoutY="85.0" prefHeight="500.0" prefWidth="350.0" styleClass="container">
+         <children>
+            <AnchorPane prefHeight="60.0" prefWidth="350.0" styleClass="container-header">
+               <children>
+                  <Text fill="WHITE" layoutX="144.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="440.0" prefHeight="60.0" prefWidth="350.0" styleClass="container-footer" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RentLioClient/RentLioClient.iml" filepath="$PROJECT_DIR$/RentLioClient/RentLioClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RentLioCommon/RentLioCommon.iml" filepath="$PROJECT_DIR$/RentLioCommon/RentLioCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RentLioServer/RentLioServer.iml" filepath="$PROJECT_DIR$/RentLioServer/RentLioServer.iml" />
+    </modules>
+  </component>
+</project>
