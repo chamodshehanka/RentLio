@@ -1,5 +1,7 @@
 package com.chamodshehanka.rentLioClient.view.controller;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,6 +23,9 @@ public class DashBoardUIController implements Initializable {
     @FXML
     private AnchorPane parameterizedPane;
 
+    @FXML
+    private AnchorPane paneTopHeader;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadLoginUI();
@@ -34,5 +39,10 @@ public class DashBoardUIController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void windowClose(ActionEvent event) {
+        Platform.exit();
     }
 }

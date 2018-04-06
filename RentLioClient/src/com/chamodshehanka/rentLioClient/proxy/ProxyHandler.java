@@ -40,7 +40,7 @@ public class ProxyHandler implements ServicesFactory {
     }
 
     public static ProxyHandler getInstance(){
-        if (proxyHandler != null)
+        if (proxyHandler == null)
             proxyHandler = new ProxyHandler();
         return proxyHandler;
     }

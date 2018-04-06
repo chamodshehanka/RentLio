@@ -15,7 +15,7 @@ public class ServicesFactoryImpl extends UnicastRemoteObject implements Services
 
     private static ServicesFactory servicesFactory;
 
-    public ServicesFactoryImpl() throws RemoteException {
+    private ServicesFactoryImpl() throws RemoteException {
     }
 
     public static ServicesFactory getInstance()throws RemoteException{
@@ -27,7 +27,7 @@ public class ServicesFactoryImpl extends UnicastRemoteObject implements Services
     @Override
     public SuperService getService(ServicesType servicesType) throws Exception {
         switch (servicesType){
-            case ADMIN: return new CustomerServiceImpl();
+            case ADMIN: return new AdminServiceImpl();
             case RESERVATION: return new ReservationServiceImpl();
             case RECEPTION: return new ReceptionServiceImpl();
             case CUSTOMER: return new CustomerServiceImpl();

@@ -5,6 +5,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="com:chamodshehanka:rentLioServer:config:hibernate.cfg.xml" />
+          <unit-entry name="hibernate.cfg.xml" value="8cabf454-d0f5-40b7-837d-946631af8b75" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/com/chamodshehanka/rentLioServer/config/hibernate.cfg.xml" />
@@ -20,5 +21,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Hibernate 5.2.14-5.2.14" level="project" />
     <orderEntry type="module" module-name="RentLioCommon" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.6-bin" level="project" />
   </component>
 </module>

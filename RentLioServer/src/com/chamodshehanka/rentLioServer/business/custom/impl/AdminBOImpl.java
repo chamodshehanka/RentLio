@@ -106,7 +106,7 @@ public class AdminBOImpl implements AdminBO{
             session.getTransaction().commit();
 
             if (admin != null){
-                AdminDTO adminDTO = new AdminDTO(
+                return new AdminDTO(
                         admin.getAdminId(),
                         admin.getAdminName(),
                         admin.getAdminAddress(),
@@ -116,7 +116,6 @@ public class AdminBOImpl implements AdminBO{
                         admin.getAdminDP(),
                         admin.getPassword()
                 );
-                return adminDTO;
             }else {
                 return null;
             }

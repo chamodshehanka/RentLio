@@ -1,48 +1,31 @@
 package com.chamodshehanka.rentLioServer.startup;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Metamodel;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.query.Query;
+import com.chamodshehanka.rentLioServer.resources.HibernateUtil;
+import com.chamodshehanka.rentLioServer.services.impl.ServicesFactoryImpl;
 
-import javax.persistence.metamodel.EntityType;
+import javax.swing.*;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 /**
  * @author chamodshehanka on 3/12/2018
  * @project RentLio
  **/
 public class ServerStart {
-    private static final SessionFactory ourSessionFactory;
-
-    static {
+    public static void main(String[] args){
+        System.setProperty("java.rmi.server.hostname","127.0.0.1");
         try {
-            Configuration configuration = new Configuration();
-            configuration.configure();
+            if (HibernateUtil.getSessionFactory().isOpen()) {
+                Registry registry = LocateRegistry.createRegistry(5050);
+                registry.rebind("rentLio", ServicesFactoryImpl.getInstance());
 
-            ourSessionFactory = configuration.buildSessionFactory();
-        } catch (Throwable ex) {
-            throw new ExceptionInInitializerError(ex);
-        }
-    }
-
-    public static Session getSession() throws HibernateException {
-        return ourSessionFactory.openSession();
-    }
-
-    public static void main(final String[] args) throws Exception {
-        try (Session session = getSession()) {
-            System.out.println("querying all the managed entities...");
-            final Metamodel metamodel = session.getSessionFactory().getMetamodel();
-            for (EntityType<?> entityType : metamodel.getEntities()) {
-                final String entityName = entityType.getName();
-                final Query query = session.createQuery("from " + entityName);
-                System.out.println("executing: " + query.getQueryString());
-                for (Object o : query.list()) {
-                    System.out.println("  " + o);
-                }
+                System.out.println("Server has been started successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "sql Saver is not connected", "Error", 1);
             }
+        } catch (RemoteException e) {
+            e.printStackTrace();
         }
     }
 }

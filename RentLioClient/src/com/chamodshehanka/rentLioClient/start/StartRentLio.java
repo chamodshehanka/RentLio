@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -32,6 +33,8 @@ public class StartRentLio extends Application {
         });
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.getIcons().add(new Image(getClass()
+                .getResourceAsStream("/com/chamodshehanka/rentLioClient/view/icon/icon.png")));
         primaryStage.setScene(scene);
         primaryStage.show();
     }

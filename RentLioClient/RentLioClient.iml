@@ -8,6 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="RentLioCommon" />
-    <orderEntry type="library" name="jfoenix-9.0.0" level="project" />
+    <orderEntry type="library" name="jfoenix-9.0.1" level="project" />
   </component>
 </module>

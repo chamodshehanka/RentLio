@@ -4,6 +4,7 @@
 
 .root{
     -fx-background-color: #34495e;
+    -fx-background-radius: 5;
 }
 
 .background{
@@ -25,6 +26,10 @@
     -fx-background-radius: 100 100 100 100;
 }
 
+.top-header{
+    -fx-background-color: #2c3e50;
+}
+
 .container{
     -fx-background-color:  #2c3e50;
     -fx-background-radius: 15 15 15 15;
@@ -38,4 +43,13 @@
 .container-footer{
     -fx-background-color:  #2ecc71;
     -fx-background-radius: 0 0 15 15;
+}
+
+.text-field-white{
+    -fx-prompt-text-fill: #ffffff;
+    -fx-text-fill: #ffffff;
+}
+
+.jfx-hamburger StackPane {
+    -fx-background-color: #ffffff;
 }
