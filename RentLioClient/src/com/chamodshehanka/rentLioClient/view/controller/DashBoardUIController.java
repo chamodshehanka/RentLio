@@ -24,17 +24,17 @@ public class DashBoardUIController implements Initializable {
     private AnchorPane parameterizedPane;
 
     @FXML
-    private AnchorPane paneTopHeader;
+    public AnchorPane paneTopHeader;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadLoginUI();
+        loadMenuUI();
     }
 
-    private void loadLoginUI(){
+    private void loadMenuUI(){
         try {
             AnchorPane paneLogin = FXMLLoader
-                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/LoginUI.fxml"));
+                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageDriverUI.fxml"));
             parameterizedPane.getChildren().setAll(paneLogin);
         } catch (IOException e) {
             e.printStackTrace();

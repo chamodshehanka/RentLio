@@ -2,18 +2,16 @@ package com.chamodshehanka.rentLioClient.view.controller;
 
 import com.chamodshehanka.rentLioClient.controller.AdminController;
 import com.chamodshehanka.rentLioClient.controller.ReceptionController;
-import com.chamodshehanka.rentLioClient.start.StartRentLio;
 import com.chamodshehanka.rentLioCommon.dto.AdminDTO;
 import com.chamodshehanka.rentLioCommon.dto.ReceptionDTO;
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -59,7 +57,7 @@ public class LoginUIController implements Initializable {
             for (AdminDTO adminDTO: adminDTOList
                  ) {
                 if (adminDTO.getAdminName().equals(userName) && adminDTO.getPassword().equals(password)){
-                    loadMenuUI();
+                    loadDashBoardUI();
                 }else {
                     Alert adminLoginFailedAlert = new Alert(Alert.AlertType.ERROR);
                     DialogPane dialogPane = adminLoginFailedAlert.getDialogPane();
@@ -91,10 +89,10 @@ public class LoginUIController implements Initializable {
         }
     }
 
-    private void loadMenuUI(){
+    private void loadDashBoardUI(){
         try {
             AnchorPane menuAnchorPane = FXMLLoader
-                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/MenuUI.fxml"));
+                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/DashBoardUI.fxml"));
             rootLogin.getChildren().setAll(menuAnchorPane);
         } catch (IOException e) {
             e.printStackTrace();

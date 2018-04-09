@@ -15,7 +15,7 @@ public interface DriverService extends SuperService{
 
     public boolean updateDriver(DriverDTO driverDTO) throws Exception;
 
-    public boolean deleteDriver(String driverDTO) throws Exception;
+    public boolean deleteDriver(String driverId) throws Exception;
 
     public DriverDTO findByIdDriver(String driverId)throws Exception;
 

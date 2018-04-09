@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootLogin" prefHeight="625.0" prefWidth="1000.0" styleClass="background" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.LoginUIController">
+<AnchorPane fx:id="rootLogin" prefHeight="700.0" prefWidth="1000.0" styleClass="background" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.LoginUIController">
    <children>
-      <AnchorPane layoutX="100.0" layoutY="65.0" prefHeight="500.0" prefWidth="350.0" styleClass="container">
+      <AnchorPane layoutX="100.0" layoutY="118.0" prefHeight="500.0" prefWidth="350.0" styleClass="container">
          <children>
             <AnchorPane prefHeight="60.0" prefWidth="350.0" styleClass="container-header">
                <children>
@@ -45,7 +45,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="540.0" layoutY="65.0" prefHeight="500.0" prefWidth="350.0" styleClass="container">
+      <AnchorPane layoutX="540.0" layoutY="118.0" prefHeight="500.0" prefWidth="350.0" styleClass="container">
          <children>
             <AnchorPane prefHeight="60.0" prefWidth="350.0" styleClass="container-header">
                <children>
@@ -77,6 +77,13 @@
                   <Font name="Calibri Bold" size="16.0" />
                </font>
             </JFXPasswordField>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="35.0" prefWidth="1000.0" styleClass="title-bar">
+         <children>
+            <JFXButton layoutX="11.0" layoutY="5.0" prefHeight="25.0" prefWidth="25.0" styleClass="close-button" />
+            <JFXButton layoutX="44.0" layoutY="5.0" prefHeight="25.0" prefWidth="25.0" styleClass="minimize-button" />
+            <JFXButton layoutX="77.0" layoutY="5.0" prefHeight="25.0" prefWidth="25.0" styleClass="maximize-button" />
          </children>
       </AnchorPane>
    </children>
