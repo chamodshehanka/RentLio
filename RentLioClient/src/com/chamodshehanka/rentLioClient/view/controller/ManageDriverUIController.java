@@ -4,6 +4,7 @@ import com.chamodshehanka.rentLioClient.controller.DriverController;
 import com.chamodshehanka.rentLioClient.util.IDGenerator;
 import com.chamodshehanka.rentLioClient.view.tableModel.DriverTableModel;
 import com.chamodshehanka.rentLioCommon.dto.DriverDTO;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -46,13 +47,51 @@ public class ManageDriverUIController implements Initializable{
     @FXML
     private TableColumn<DriverTableModel, String> colStatus;
 
+    @FXML
+    private JFXTextField txtDriverId;
+
+    @FXML
+    private JFXTextField txtDriverName;
+
+    @FXML
+    private JFXTextField txtDriverAddress;
+
+    @FXML
+    private JFXTextField txtEmail;
+
+    @FXML
+    private JFXTextField txtTel;
+
+    @FXML
+    private JFXTextField txtNIC;
+
     private ObservableList<DriverTableModel> driverTableModelObservableList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadDriverTableView();
+        generateDriverId();
+    }
+
+    @FXML
+    private void searchById(){
         try {
-            System.out.println(IDGenerator.getNewID("driver","D"));
+            DriverDTO driverDTO = DriverController.getDriverBy(txtDriverId.getText());
+            if (driverDTO != null){
+                txtDriverName.setText(driverDTO.getDriverName());
+                txtDriverAddress.setText(driverDTO.getAddress());
+                txtEmail.setText(driverDTO.getEmail());
+                txtTel.setText(String.valueOf(driverDTO.getTel()));
+                txtNIC.setText(driverDTO.getDriverNIC());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void generateDriverId(){
+        try {
+            txtDriverId.setText(IDGenerator.getNewID("driver","D"));
         } catch (Exception e) {
             e.printStackTrace();
         }

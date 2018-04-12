@@ -63,6 +63,12 @@
     -fx-text-fill: #ffffff;
 }
 
+/*Buttons*/
+.button-white{
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 35;
+    -fx-text-fill: #2ecc71;
+}
 .jfx-hamburger StackPane {
     -fx-background-color: #ffffff;
 }
@@ -71,10 +77,11 @@
 .table-view {
     -fx-base: #2ecc71;
     -fx-control-inner-background: #2ecc71;
-    -fx-background-color: transparent;
+    -fx-background-color: #27ae60;
+    -fx-background-radius: 10 10 10 10;
     -fx-table-cell-border-color: transparent;
     -fx-table-header-border-color: transparent;
-    -fx-padding: 5;
+    -fx-padding: 10;
 }
 
 .table-view *{
