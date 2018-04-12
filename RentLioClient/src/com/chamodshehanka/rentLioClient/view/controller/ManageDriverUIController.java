@@ -1,6 +1,7 @@
 package com.chamodshehanka.rentLioClient.view.controller;
 
 import com.chamodshehanka.rentLioClient.controller.DriverController;
+import com.chamodshehanka.rentLioClient.util.IDGenerator;
 import com.chamodshehanka.rentLioClient.view.tableModel.DriverTableModel;
 import com.chamodshehanka.rentLioCommon.dto.DriverDTO;
 import javafx.collections.FXCollections;
@@ -12,7 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -51,6 +52,11 @@ public class ManageDriverUIController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadDriverTableView();
+        try {
+            System.out.println(IDGenerator.getNewID("driver","driverId","D"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void loadDriverTableView(){
@@ -63,22 +69,6 @@ public class ManageDriverUIController implements Initializable{
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         tblDriver.setItems(driverTableModelObservableList);
-
-        //
-        /*DriverTableModel model = new DriverTableModel();
-        model.setDriverId("D002");
-        model.setName("Hulk");
-        model.setAddress("Marvel");
-        model.setEmail("hulk@stak.com");
-        model.setTel(776565656);
-        model.setNic("545454545H");
-        model.setStatus("Alive");
-
-        for (int i=0;i<2;i++){
-            driverTableModelObservableList.add(model);
-            driverTableModelObservableList.add(model);
-        }*/
-        //
 
         try {
             List<DriverDTO> driverDTOList = DriverController.getAllDrivers();

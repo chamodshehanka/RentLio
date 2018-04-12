@@ -33,7 +33,7 @@ public class BranchController {
         return branchService.deleteBranch(branchId);
     }
 
-    public static List<BranchDTO> getAllBranches(String branchId)throws Exception{
+    public static List<BranchDTO> getAllBranches()throws Exception{
         BranchService branchService = (BranchService) ProxyHandler.getInstance().getService(ServicesFactory.ServicesType.BRANCH);
         return branchService.getAllBranches();
     }
