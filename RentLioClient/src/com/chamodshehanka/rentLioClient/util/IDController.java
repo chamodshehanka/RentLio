@@ -10,9 +10,9 @@ import java.util.List;
  * @author chamodshehanka on 4/12/2018
  * @project RentLio
  **/
-public class IDController {
+class IDController {
 
-    public static String getLastID(String tblName, String colName) throws Exception {
+    static String getLastID(String tblName, String colName) throws Exception {
 
         List list;
         AdminDTO adminDTO;
