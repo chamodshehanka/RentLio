@@ -52,7 +52,7 @@ public class ManageDriverUIController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         loadDriverTableView();
         try {
-            System.out.println(IDGenerator.getNewID("driver","driverId","D"));
+            System.out.println(IDGenerator.getNewID("driver","D"));
         } catch (Exception e) {
             e.printStackTrace();
         }

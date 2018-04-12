@@ -6,8 +6,8 @@ package com.chamodshehanka.rentLioClient.util;
  **/
 public class IDGenerator {
 
-    public static String getNewID(String tblName, String colName, String prefix) throws Exception {
-        String lastId = IDController.getLastID(tblName, colName);
+    public static String getNewID(String tblName, String prefix) throws Exception {
+        String lastId = IDController.getLastID(tblName);
         String newId;
         if (lastId != null) {
             StringBuilder Id= new StringBuilder();

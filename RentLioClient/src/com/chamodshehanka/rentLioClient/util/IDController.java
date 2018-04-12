@@ -12,7 +12,7 @@ import java.util.List;
  **/
 class IDController {
 
-    static String getLastID(String tblName, String colName) throws Exception {
+    static String getLastID(String tblName) throws Exception {
 
         List list;
         AdminDTO adminDTO;
