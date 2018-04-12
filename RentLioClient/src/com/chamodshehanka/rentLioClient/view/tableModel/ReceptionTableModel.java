@@ -1,25 +1,26 @@
-package com.chamodshehanka.rentLioClient.view.tableView;
+package com.chamodshehanka.rentLioClient.view.tableModel;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
  * @author chamodshehanka on 4/9/2018
  * @project RentLio
  **/
-public class ReceptionTableView {
+public class ReceptionTableModel {
 
-    private SimpleStringProperty receptionId;
-    private SimpleStringProperty name;
-    private SimpleStringProperty branch;
-    private SimpleStringProperty address;
-    private SimpleStringProperty email;
-    private SimpleStringProperty tel;
-    private SimpleStringProperty nic;
+    private SimpleStringProperty receptionId = new SimpleStringProperty("");
+    private SimpleStringProperty name = new SimpleStringProperty("");
+    private SimpleStringProperty branch = new SimpleStringProperty("");
+    private SimpleStringProperty address = new SimpleStringProperty("");
+    private SimpleStringProperty email = new SimpleStringProperty("");
+    private SimpleIntegerProperty tel = new SimpleIntegerProperty(0);
+    private SimpleStringProperty nic = new SimpleStringProperty("");
 
-    public ReceptionTableView() {
+    public ReceptionTableModel() {
     }
 
-    public ReceptionTableView(SimpleStringProperty receptionId, SimpleStringProperty name, SimpleStringProperty branch, SimpleStringProperty address, SimpleStringProperty email, SimpleStringProperty tel, SimpleStringProperty nic) {
+    public ReceptionTableModel(SimpleStringProperty receptionId, SimpleStringProperty name, SimpleStringProperty branch, SimpleStringProperty address, SimpleStringProperty email, SimpleIntegerProperty tel, SimpleStringProperty nic) {
         this.receptionId = receptionId;
         this.name = name;
         this.branch = branch;
@@ -89,15 +90,15 @@ public class ReceptionTableView {
         this.email.set(email);
     }
 
-    public String getTel() {
+    public int getTel() {
         return tel.get();
     }
 
-    public SimpleStringProperty telProperty() {
+    public SimpleIntegerProperty telProperty() {
         return tel;
     }
 
-    public void setTel(String tel) {
+    public void setTel(int tel) {
         this.tel.set(tel);
     }
 

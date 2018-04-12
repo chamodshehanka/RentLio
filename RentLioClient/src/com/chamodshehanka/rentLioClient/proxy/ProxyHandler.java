@@ -13,7 +13,6 @@ import java.rmi.Naming;
 public class ProxyHandler implements ServicesFactory {
 
     private static ProxyHandler proxyHandler;
-    private ServicesFactory servicesFactory;
     private CustomerService customerService;
     private VehicleService vehicleService;
     private BranchService branchService;
@@ -23,9 +22,9 @@ public class ProxyHandler implements ServicesFactory {
     private ReservationService reservationService;
     private PaymentService paymentService;
 
-    public ProxyHandler() {
+    private ProxyHandler() {
         try {
-            servicesFactory = (ServicesFactory) Naming.lookup("rmi://localhost:5050/rentLio");
+            ServicesFactory servicesFactory = (ServicesFactory) Naming.lookup("rmi://localhost:5050/rentLio");
             customerService = (CustomerService) servicesFactory.getService(ServicesType.CUSTOMER);
             vehicleService = (VehicleService) servicesFactory.getService(ServicesType.VEHICLE);
             branchService = (BranchService) servicesFactory.getService(ServicesType.BRANCH);

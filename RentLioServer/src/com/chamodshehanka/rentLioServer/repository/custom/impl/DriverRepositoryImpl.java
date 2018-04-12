@@ -16,18 +16,18 @@ public class DriverRepositoryImpl extends SuperRepositoryImpl<Driver, String> im
     private Session session;
     private Class<Driver> driverClass;
 
-    public DriverRepositoryImpl() {
+    /*public DriverRepositoryImpl() {
         driverClass = (Class<Driver>) ((ParameterizedType) (this.getClass().getGenericSuperclass())).getActualTypeArguments()[0];
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean updateDriver(Driver driver) throws Exception {
         session.update(driver);
         return true;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void setSession(Session session) throws Exception {
         this.session = session;
-    }
+    }*/
 }

@@ -1,4 +1,4 @@
-package com.chamodshehanka.rentLioClient.view.tableView;
+package com.chamodshehanka.rentLioClient.view.tableModel;
 
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -7,29 +7,29 @@ import javafx.beans.property.SimpleStringProperty;
  * @author chamodshehanka on 4/9/2018
  * @project RentLio
  **/
-public class PaymentTableView {
+public class PaymentTableModel {
 
-    private SimpleStringProperty paymentId;
-    private SimpleStringProperty reservationID;
-    private SimpleStringProperty date;
-    private SimpleStringProperty customerId;
-    private SimpleStringProperty carNumber;
-    private SimpleStringProperty receptionId;
-    private SimpleStringProperty driverId;
-    private SimpleDoubleProperty driverPayment;
-    private SimpleDoubleProperty deposit;
-    private SimpleDoubleProperty damage;
-    private SimpleStringProperty afterKM;
-    private SimpleDoubleProperty extraKmPrice;
-    private SimpleDoubleProperty dayPayment;
-    private SimpleDoubleProperty totalPrice;
-    private SimpleDoubleProperty discount;
-    private SimpleDoubleProperty totalLastPrice;
+    private SimpleStringProperty paymentId = new SimpleStringProperty("");
+    private SimpleStringProperty reservationID = new SimpleStringProperty("");
+    private SimpleStringProperty date = new SimpleStringProperty("");
+    private SimpleStringProperty customerId = new SimpleStringProperty("");
+    private SimpleStringProperty carNumber = new SimpleStringProperty("");
+    private SimpleStringProperty receptionId = new SimpleStringProperty("");
+    private SimpleStringProperty driverId = new SimpleStringProperty("");
+    private SimpleDoubleProperty driverPayment = new SimpleDoubleProperty(0.0);
+    private SimpleDoubleProperty deposit = new SimpleDoubleProperty(0.0);
+    private SimpleDoubleProperty damage = new SimpleDoubleProperty(0.0);
+    private SimpleStringProperty afterKM = new SimpleStringProperty("");
+    private SimpleDoubleProperty extraKmPrice = new SimpleDoubleProperty(0.0);
+    private SimpleDoubleProperty dayPayment = new SimpleDoubleProperty(0.0);
+    private SimpleDoubleProperty totalPrice = new SimpleDoubleProperty(0.0);
+    private SimpleDoubleProperty discount = new SimpleDoubleProperty(0.0);
+    private SimpleDoubleProperty totalLastPrice = new SimpleDoubleProperty(0.0);
 
-    public PaymentTableView() {
+    public PaymentTableModel() {
     }
 
-    public PaymentTableView(SimpleStringProperty paymentId, SimpleStringProperty reservationID, SimpleStringProperty date, SimpleStringProperty customerId, SimpleStringProperty carNumber, SimpleStringProperty receptionId, SimpleStringProperty driverId, SimpleDoubleProperty driverPayment, SimpleDoubleProperty deposit, SimpleDoubleProperty damage, SimpleStringProperty afterKM, SimpleDoubleProperty extraKmPrice, SimpleDoubleProperty dayPayment, SimpleDoubleProperty totalPrice, SimpleDoubleProperty discount, SimpleDoubleProperty totalLastPrice) {
+    public PaymentTableModel(SimpleStringProperty paymentId, SimpleStringProperty reservationID, SimpleStringProperty date, SimpleStringProperty customerId, SimpleStringProperty carNumber, SimpleStringProperty receptionId, SimpleStringProperty driverId, SimpleDoubleProperty driverPayment, SimpleDoubleProperty deposit, SimpleDoubleProperty damage, SimpleStringProperty afterKM, SimpleDoubleProperty extraKmPrice, SimpleDoubleProperty dayPayment, SimpleDoubleProperty totalPrice, SimpleDoubleProperty discount, SimpleDoubleProperty totalLastPrice) {
         this.paymentId = paymentId;
         this.reservationID = reservationID;
         this.date = date;

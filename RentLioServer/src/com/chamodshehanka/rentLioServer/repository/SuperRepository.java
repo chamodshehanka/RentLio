@@ -16,12 +16,10 @@ public interface SuperRepository<T, ID> {
 
     public void delete(T t)throws Exception;
 
-    public void update(T t)throws Exception;
+    public boolean update(T t)throws Exception;
 
     public T findById(ID id)throws Exception;
 
     public List<T> findAll() throws Exception;
-
-    public String getListId(String rowName)throws Exception;
 
 }

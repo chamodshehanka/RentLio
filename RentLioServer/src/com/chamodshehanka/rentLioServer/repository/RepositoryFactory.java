@@ -12,10 +12,10 @@ public class RepositoryFactory {
         ADMIN, BRANCH, CUSTOMER, DRIVER, PAYMENT, RECEPTION, RESERVATION, VEHICLE
     }
 
-    public RepositoryFactory() {
+    private RepositoryFactory() {
     }
 
-    public static RepositoryFactory repositoryFactory;
+    private static RepositoryFactory repositoryFactory;
 
     public static RepositoryFactory getInstance(){
         if (repositoryFactory == null)

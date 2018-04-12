@@ -1,4 +1,4 @@
-package com.chamodshehanka.rentLioClient.view.tableView;
+package com.chamodshehanka.rentLioClient.view.tableModel;
 
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -8,28 +8,28 @@ import javafx.beans.property.SimpleStringProperty;
  * @author chamodshehanka on 4/9/2018
  * @project RentLio
  **/
-public class VehicleTableView {
+public class VehicleTableModel {
 
-    private SimpleStringProperty carNumber;
-    private SimpleStringProperty vehicleType;
-    private SimpleStringProperty brand;
-    private SimpleStringProperty model;
-    private SimpleStringProperty imageURL;
-    private SimpleStringProperty modelYear;
-    private SimpleStringProperty chasieNo;
-    private SimpleStringProperty fuel;
-    private SimpleDoubleProperty kmRs;
-    private SimpleStringProperty engineCapacity;
-    private SimpleStringProperty colour;
-    private SimpleIntegerProperty noOfDoors;
-    private SimpleStringProperty insurance;
-    private SimpleStringProperty comment;
-    private SimpleStringProperty status;
+    private SimpleStringProperty carNumber = new SimpleStringProperty("");
+    private SimpleStringProperty vehicleType = new SimpleStringProperty("");
+    private SimpleStringProperty brand = new SimpleStringProperty("");
+    private SimpleStringProperty model = new SimpleStringProperty("");
+    private SimpleStringProperty imageURL = new SimpleStringProperty("");
+    private SimpleStringProperty modelYear = new SimpleStringProperty("");
+    private SimpleStringProperty chasieNo = new SimpleStringProperty("");
+    private SimpleStringProperty fuel = new SimpleStringProperty("");
+    private SimpleDoubleProperty kmRs = new SimpleDoubleProperty(0.0);
+    private SimpleStringProperty engineCapacity = new SimpleStringProperty("");
+    private SimpleStringProperty colour = new SimpleStringProperty("");
+    private SimpleIntegerProperty noOfDoors = new SimpleIntegerProperty(0);
+    private SimpleStringProperty insurance = new SimpleStringProperty("");
+    private SimpleStringProperty comment = new SimpleStringProperty("");
+    private SimpleStringProperty status = new SimpleStringProperty("");
 
-    public VehicleTableView() {
+    public VehicleTableModel() {
     }
 
-    public VehicleTableView(SimpleStringProperty carNumber, SimpleStringProperty vehicleType, SimpleStringProperty brand, SimpleStringProperty model, SimpleStringProperty imageURL, SimpleStringProperty modelYear, SimpleStringProperty chasieNo, SimpleStringProperty fuel, SimpleDoubleProperty kmRs, SimpleStringProperty engineCapacity, SimpleStringProperty colour, SimpleIntegerProperty noOfDoors, SimpleStringProperty insurance, SimpleStringProperty comment, SimpleStringProperty status) {
+    public VehicleTableModel(SimpleStringProperty carNumber, SimpleStringProperty vehicleType, SimpleStringProperty brand, SimpleStringProperty model, SimpleStringProperty imageURL, SimpleStringProperty modelYear, SimpleStringProperty chasieNo, SimpleStringProperty fuel, SimpleDoubleProperty kmRs, SimpleStringProperty engineCapacity, SimpleStringProperty colour, SimpleIntegerProperty noOfDoors, SimpleStringProperty insurance, SimpleStringProperty comment, SimpleStringProperty status) {
         this.carNumber = carNumber;
         this.vehicleType = vehicleType;
         this.brand = brand;

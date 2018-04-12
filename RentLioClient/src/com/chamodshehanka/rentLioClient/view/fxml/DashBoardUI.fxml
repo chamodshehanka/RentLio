@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -15,9 +16,10 @@
       </AnchorPane>
       <AnchorPane fx:id="paneTopHeader" layoutY="35.0" prefHeight="40.0" prefWidth="1000.0" styleClass="top-header">
          <children>
-            <JFXHamburger layoutX="124.0" layoutY="10.0" />
+            <JFXHamburger fx:id="hamburger" layoutX="124.0" layoutY="10.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="parameterizedPane" layoutY="75.0" prefHeight="625.0" prefWidth="1000.0" />
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="300.0" layoutY="75.0" prefHeight="625.0" prefWidth="300.0" />
    </children>
 </AnchorPane>

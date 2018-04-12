@@ -1,24 +1,25 @@
-package com.chamodshehanka.rentLioClient.view.tableView;
+package com.chamodshehanka.rentLioClient.view.tableModel;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
  * @author chamodshehanka on 4/9/2018
  * @project RentLio
  **/
-public class CustomerTableView {
+public class CustomerTableModel {
 
-    private SimpleStringProperty customerId;
-    private SimpleStringProperty custName;
-    private SimpleStringProperty address;
-    private SimpleStringProperty email;
-    private SimpleStringProperty customerTel;
-    private SimpleStringProperty customerNIC;
+    private SimpleStringProperty customerId = new SimpleStringProperty("");;
+    private SimpleStringProperty custName = new SimpleStringProperty("");;
+    private SimpleStringProperty address = new SimpleStringProperty("");;
+    private SimpleStringProperty email = new SimpleStringProperty("");;
+    private SimpleIntegerProperty customerTel = new SimpleIntegerProperty(0);
+    private SimpleStringProperty customerNIC = new SimpleStringProperty("");;
 
-    public CustomerTableView() {
+    public CustomerTableModel() {
     }
 
-    public CustomerTableView(SimpleStringProperty customerId, SimpleStringProperty custName, SimpleStringProperty address, SimpleStringProperty email, SimpleStringProperty customerTel, SimpleStringProperty customerNIC) {
+    public CustomerTableModel(SimpleStringProperty customerId, SimpleStringProperty custName, SimpleStringProperty address, SimpleStringProperty email, SimpleIntegerProperty customerTel, SimpleStringProperty customerNIC) {
         this.customerId = customerId;
         this.custName = custName;
         this.address = address;
@@ -75,15 +76,15 @@ public class CustomerTableView {
         this.email.set(email);
     }
 
-    public String getCustomerTel() {
+    public int getCustomerTel() {
         return customerTel.get();
     }
 
-    public SimpleStringProperty customerTelProperty() {
+    public SimpleIntegerProperty customerTelProperty() {
         return customerTel;
     }
 
-    public void setCustomerTel(String customerTel) {
+    public void setCustomerTel(int customerTel) {
         this.customerTel.set(customerTel);
     }
 

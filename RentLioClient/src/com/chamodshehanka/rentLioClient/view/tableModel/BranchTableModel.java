@@ -1,24 +1,25 @@
-package com.chamodshehanka.rentLioClient.view.tableView;
+package com.chamodshehanka.rentLioClient.view.tableModel;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
  * @author chamodshehanka on 4/9/2018
  * @project RentLio
  **/
-public class BranchTableView {
+public class BranchTableModel {
 
-    private SimpleStringProperty branchId;
-    private SimpleStringProperty registerId;
-    private SimpleStringProperty address;
-    private SimpleStringProperty email;
-    private SimpleStringProperty tel;
-    private SimpleStringProperty postalCode;
+    private SimpleStringProperty branchId = new SimpleStringProperty("");
+    private SimpleStringProperty registerId = new SimpleStringProperty("");;
+    private SimpleStringProperty address = new SimpleStringProperty("");;
+    private SimpleStringProperty email = new SimpleStringProperty("");;
+    private SimpleIntegerProperty tel = new SimpleIntegerProperty(0);
+    private SimpleStringProperty postalCode = new SimpleStringProperty("");
 
-    public BranchTableView(){
+    public BranchTableModel(){
     }
 
-    public BranchTableView(SimpleStringProperty branchId, SimpleStringProperty registerId, SimpleStringProperty address, SimpleStringProperty email, SimpleStringProperty tel, SimpleStringProperty postalCode) {
+    public BranchTableModel(SimpleStringProperty branchId, SimpleStringProperty registerId, SimpleStringProperty address, SimpleStringProperty email, SimpleIntegerProperty tel, SimpleStringProperty postalCode) {
         this.branchId = branchId;
         this.registerId = registerId;
         this.address = address;
@@ -75,15 +76,15 @@ public class BranchTableView {
         this.email.set(email);
     }
 
-    public String getTel() {
+    public int getTel() {
         return tel.get();
     }
 
-    public SimpleStringProperty telProperty() {
+    public SimpleIntegerProperty telProperty() {
         return tel;
     }
 
-    public void setTel(String tel) {
+    public void setTel(int tel) {
         this.tel.set(tel);
     }
 

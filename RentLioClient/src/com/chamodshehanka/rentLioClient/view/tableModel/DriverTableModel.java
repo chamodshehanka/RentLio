@@ -1,25 +1,26 @@
-package com.chamodshehanka.rentLioClient.view.tableView;
+package com.chamodshehanka.rentLioClient.view.tableModel;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
  * @author chamodshehanka on 4/9/2018
  * @project RentLio
  **/
-public class DriverTableView {
+public class DriverTableModel {
 
-    private SimpleStringProperty driverId;
-    private SimpleStringProperty name;
-    private SimpleStringProperty address;
-    private SimpleStringProperty email;
-    private SimpleStringProperty tel;
-    private SimpleStringProperty nic;
-    private SimpleStringProperty status;
+    private SimpleStringProperty driverId = new SimpleStringProperty("");
+    private SimpleStringProperty name = new SimpleStringProperty("");
+    private SimpleStringProperty address = new SimpleStringProperty("");
+    private SimpleStringProperty email = new SimpleStringProperty("");
+    private SimpleIntegerProperty tel = new SimpleIntegerProperty(0);
+    private SimpleStringProperty nic = new SimpleStringProperty("");
+    private SimpleStringProperty status = new SimpleStringProperty("");
 
-    public DriverTableView() {
+    public DriverTableModel() {
     }
 
-    public DriverTableView(SimpleStringProperty driverId, SimpleStringProperty name, SimpleStringProperty address, SimpleStringProperty email, SimpleStringProperty tel, SimpleStringProperty nic, SimpleStringProperty status) {
+    public DriverTableModel(SimpleStringProperty driverId, SimpleStringProperty name, SimpleStringProperty address, SimpleStringProperty email, SimpleIntegerProperty tel, SimpleStringProperty nic, SimpleStringProperty status) {
         this.driverId = driverId;
         this.name = name;
         this.address = address;
@@ -77,15 +78,15 @@ public class DriverTableView {
         this.email.set(email);
     }
 
-    public String getTel() {
+    public int getTel() {
         return tel.get();
     }
 
-    public SimpleStringProperty telProperty() {
+    public SimpleIntegerProperty telProperty() {
         return tel;
     }
 
-    public void setTel(String tel) {
+    public void setTel(int tel) {
         this.tel.set(tel);
     }
 

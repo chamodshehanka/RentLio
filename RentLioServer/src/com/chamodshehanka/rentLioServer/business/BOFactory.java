@@ -12,10 +12,10 @@ public class BOFactory {
         CUSTOMER, VEHICLE, BRANCH, DRIVER, RECEPTION, ADMIN, RESERVATION, PAYMENT
     }
 
-    public BOFactory() {
+    private BOFactory() {
     }
 
-    public static BOFactory boFactory;
+    private static BOFactory boFactory;
 
     public static BOFactory getInstance(){
         if (boFactory == null)

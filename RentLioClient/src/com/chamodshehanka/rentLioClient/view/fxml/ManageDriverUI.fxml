@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="625.0" prefWidth="1000.0" styleClass="root" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.ManageDriverUIController">
    <children>
-      <AnchorPane prefHeight="10.0" prefWidth="1000.0" styleClass="container-green" />
-      <AnchorPane layoutY="243.0" prefHeight="380.0" prefWidth="1000.0" styleClass="container-dark" />
+      <AnchorPane prefHeight="10.0" prefWidth="1000.0" styleClass="container-green" visible="false" />
+      <AnchorPane layoutX="24.0" layoutY="53.0" prefHeight="170.0" prefWidth="766.0" styleClass="container">
+         <children>
+            <AnchorPane prefHeight="10.0" prefWidth="950.0" styleClass="container-header" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane layoutY="160.0" prefHeight="10.0" prefWidth="950.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="243.0" prefHeight="380.0" prefWidth="1000.0" styleClass="container-dark">
+         <children>
+            <TableView fx:id="tblDriver" layoutX="34.0" layoutY="80.0" prefHeight="200.0" prefWidth="566.0">
+              <columns>
+                <TableColumn fx:id="colDriverId" prefWidth="75.0" text="Driver ID" />
+                <TableColumn fx:id="colDriverName" prefWidth="75.0" text="Name " />
+                  <TableColumn fx:id="colAddress" prefWidth="75.0" text="Address" />
+                  <TableColumn fx:id="colEmail" prefWidth="75.0" text="Email" />
+                  <TableColumn fx:id="colTel" prefWidth="75.0" text="Telephone" />
+                  <TableColumn fx:id="colNIC" prefWidth="81.66665649414062" text="National ID" />
+                  <TableColumn fx:id="colStatus" prefWidth="75.0" text="Status" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
    </children>
 </AnchorPane>

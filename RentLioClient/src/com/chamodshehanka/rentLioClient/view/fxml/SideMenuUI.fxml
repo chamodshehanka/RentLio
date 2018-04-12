@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.chamodshehanka.rentLioClient.view.controller.SideMenuUIController"
-            prefHeight="625.0" prefWidth="300.0">
 
+<AnchorPane prefHeight="625.0" prefWidth="300.0" styleClass="side-menu" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.SideMenuUIController">
+   <children>
+      <ImageView fx:id="imgUser" fitHeight="150.0" fitWidth="150.0" layoutX="75.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+      <Line endX="100.0" layoutX="149.0" layoutY="297.0" startX="-100.0" stroke="#21031c" />
+   </children>
 </AnchorPane>

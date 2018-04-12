@@ -54,6 +54,10 @@
     -fx-background-radius: 10 10 10 10;
 }
 
+.side-menu{
+    -fx-background-color:  #2c3e50;
+}
+
 .text-field-white{
     -fx-prompt-text-fill: #ffffff;
     -fx-text-fill: #ffffff;
@@ -61,4 +65,54 @@
 
 .jfx-hamburger StackPane {
     -fx-background-color: #ffffff;
+}
+
+/*Table View*/
+.table-view {
+    -fx-base: #2ecc71;
+    -fx-control-inner-background: #2ecc71;
+    -fx-background-color: transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view *{
+    -fx-text-fill: #2c3e50;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 18px;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+            transparent
+            transparent
+            derive(-fx-base, 80%)
+            transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 14px;
+    -fx-font-family: "Calibri Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-row-cell .column-header .label{
+    -fx-background-insets: 3px;
+    -fx-text-fill: white;
+}
+.table-view .table-row-cell{
+    -fx-text-fill: white;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color:#16a085;
 }

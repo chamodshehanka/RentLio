@@ -10,8 +10,8 @@ import org.hibernate.Session;
  **/
 public interface DriverRepository extends SuperRepository<Driver, String>{
 
-    public boolean updateDriver(Driver driver)throws Exception;
+//    public boolean updateDriver(Driver driver)throws Exception;
 
-    public void setSession(Session session)throws Exception;
+//    public void setSession(Session session)throws Exception;
 
 }

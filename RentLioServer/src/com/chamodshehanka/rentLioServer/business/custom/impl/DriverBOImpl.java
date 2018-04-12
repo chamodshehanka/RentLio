@@ -112,12 +112,11 @@ public class DriverBOImpl implements DriverBO{
     @Override
     public List<DriverDTO> getAllDrivers() throws Exception {
         try (Session session = HibernateUtil.getSessionFactory().openSession()){
-            session.beginTransaction();
             driverRepository.setSession(session);
+            session.beginTransaction();
 
             List<Driver> driverList = driverRepository.findAll();
             session.getTransaction().commit();
-
             if (driverList != null){
                 List<DriverDTO> driverDTOList = new ArrayList<>();
                 for (Driver driver: driverList

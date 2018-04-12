@@ -1,4 +1,4 @@
-package com.chamodshehanka.rentLioClient.view.tableView;
+package com.chamodshehanka.rentLioClient.view.tableModel;
 
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -7,23 +7,23 @@ import javafx.beans.property.SimpleStringProperty;
  * @author chamodshehanka on 4/9/2018
  * @project RentLio
  **/
-public class ReservationTableView {
+public class ReservationTableModel {
 
-    private SimpleStringProperty reservationId;
-    private SimpleStringProperty receptionId;
-    private SimpleStringProperty customerId;
-    private SimpleStringProperty customerName;
-    private SimpleStringProperty driverId;
-    private SimpleStringProperty driverName;
-    private SimpleStringProperty vehicleNumber;
-    private SimpleStringProperty pickUpDate;
-    private SimpleDoubleProperty diposit;
-    private SimpleStringProperty status;
+    private SimpleStringProperty reservationId = new SimpleStringProperty("");
+    private SimpleStringProperty receptionId = new SimpleStringProperty("");
+    private SimpleStringProperty customerId = new SimpleStringProperty("");
+    private SimpleStringProperty customerName = new SimpleStringProperty("");
+    private SimpleStringProperty driverId = new SimpleStringProperty("");
+    private SimpleStringProperty driverName = new SimpleStringProperty("");
+    private SimpleStringProperty vehicleNumber = new SimpleStringProperty("");
+    private SimpleStringProperty pickUpDate = new SimpleStringProperty("");
+    private SimpleDoubleProperty deposit = new SimpleDoubleProperty(0.0);
+    private SimpleStringProperty status = new SimpleStringProperty("");
 
-    public ReservationTableView() {
+    public ReservationTableModel() {
     }
 
-    public ReservationTableView(SimpleStringProperty reservationId, SimpleStringProperty receptionId, SimpleStringProperty customerId, SimpleStringProperty customerName, SimpleStringProperty driverId, SimpleStringProperty driverName, SimpleStringProperty vehicleNumber, SimpleStringProperty pickUpDate, SimpleDoubleProperty diposit, SimpleStringProperty status) {
+    public ReservationTableModel(SimpleStringProperty reservationId, SimpleStringProperty receptionId, SimpleStringProperty customerId, SimpleStringProperty customerName, SimpleStringProperty driverId, SimpleStringProperty driverName, SimpleStringProperty vehicleNumber, SimpleStringProperty pickUpDate, SimpleDoubleProperty deposit, SimpleStringProperty status) {
         this.reservationId = reservationId;
         this.receptionId = receptionId;
         this.customerId = customerId;
@@ -32,7 +32,7 @@ public class ReservationTableView {
         this.driverName = driverName;
         this.vehicleNumber = vehicleNumber;
         this.pickUpDate = pickUpDate;
-        this.diposit = diposit;
+        this.deposit = deposit;
         this.status = status;
     }
 
@@ -132,16 +132,16 @@ public class ReservationTableView {
         this.pickUpDate.set(pickUpDate);
     }
 
-    public double getDiposit() {
-        return diposit.get();
+    public double getDeposit() {
+        return deposit.get();
     }
 
-    public SimpleDoubleProperty dipositProperty() {
-        return diposit;
+    public SimpleDoubleProperty depositProperty() {
+        return deposit;
     }
 
-    public void setDiposit(double diposit) {
-        this.diposit.set(diposit);
+    public void setDeposit(double deposit) {
+        this.deposit.set(deposit);
     }
 
     public String getStatus() {

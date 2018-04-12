@@ -25,7 +25,6 @@ public class ReservationBOImpl implements ReservationBO {
     private DriverRepository driverRepository;
     private VehicleRepository vehicleRepository;
     private ReceptionRepository receptionRepository;
-    private PaymentRepository paymentRepository;
 
     public ReservationBOImpl() {
         reservationRepository = (ReservationRepository) RepositoryFactory.getInstance()
@@ -38,7 +37,7 @@ public class ReservationBOImpl implements ReservationBO {
                 .getRepository(RepositoryFactory.RepositoryFactoryTypes.VEHICLE);
         receptionRepository = (ReceptionRepository) RepositoryFactory.getInstance()
                 .getRepository(RepositoryFactory.RepositoryFactoryTypes.RECEPTION);
-        paymentRepository = (PaymentRepository) RepositoryFactory.getInstance()
+        PaymentRepository paymentRepository = (PaymentRepository) RepositoryFactory.getInstance()
                 .getRepository(RepositoryFactory.RepositoryFactoryTypes.PAYMENT);
     }
 
@@ -114,7 +113,7 @@ public class ReservationBOImpl implements ReservationBO {
                     if (driverDTO != null){
                         driverRepository.setSession(session);
                         driver.setState(driverDTO.getState());
-                        if (driverRepository.updateDriver(driver)){
+                        if (driverRepository.update(driver)){
                             transaction.commit();
                             return true;
                         }else {
