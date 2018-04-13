@@ -229,7 +229,7 @@ public class ManageDriverUIController implements Initializable{
     @FXML
     private void refreshTable(){
         tblDriver.setItems(null);
-        driverTableModelObservableList.removeAll(driverTableModelObservableList);
+        driverTableModelObservableList.clear();
         loadDriverTableView();
     }
 
