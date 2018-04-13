@@ -9,13 +9,16 @@ import javafx.scene.control.DialogPane;
  **/
 public class AlertBuilder {
 
-    private String alertType, title, headerText, contentText;
+    private String title;
+    private String headerText;
+    private String contentText;
 
     public AlertBuilder(String alertType, String title, String headerText, String contentText) {
-        this.alertType = alertType;
         this.title = title;
         this.headerText = headerText;
         this.contentText = contentText;
+
+        alertType = alertType.toLowerCase();
 
         switch (alertType){
             case "error": errorAlert();
