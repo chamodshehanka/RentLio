@@ -79,7 +79,7 @@
                   <TableColumn fx:id="colStatus" prefWidth="94.0" text="Status" />
               </columns>
             </TableView>
-            <JFXButton layoutX="813.0" layoutY="88.0" styleClass="button-white" text="Print Driver Details" textFill="#2ecc71">
+            <JFXButton layoutX="813.0" layoutY="88.0" onAction="#refreshTable" styleClass="button-white" text="Print Driver Details" textFill="#2ecc71">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>

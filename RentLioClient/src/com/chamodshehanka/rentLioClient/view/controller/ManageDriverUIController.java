@@ -91,6 +91,7 @@ public class ManageDriverUIController implements Initializable{
             if (isAdded){
                 new AlertBuilder("info","Manage Driver","Driver Add",
                         "Driver has been successfully added !!");
+                refreshTable();
                 generateDriverId();
                 loadDriverTableView();
                 txtDriverName.setText("");
@@ -147,6 +148,7 @@ public class ManageDriverUIController implements Initializable{
             if (isUpdated){
                 new AlertBuilder("info","Manage Driver","Driver Update",
                         "Driver has been successfully updated !!");
+                refreshTable();
             }else {
                 new AlertBuilder("error","Manage Driver","Driver Update",
                         "Something wrong");
@@ -163,6 +165,7 @@ public class ManageDriverUIController implements Initializable{
             if (isDeleted){
                 new AlertBuilder("info","Manage Driver","Driver Delete",
                         "Driver has been successfully deleted !!");
+                refreshTable();
             }else {
                 new AlertBuilder("error","Manage Driver","Driver Delete",
                         "Driver couldn't delete");
@@ -221,6 +224,13 @@ public class ManageDriverUIController implements Initializable{
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void refreshTable(){
+        tblDriver.setItems(null);
+        driverTableModelObservableList.removeAll(driverTableModelObservableList);
+        loadDriverTableView();
     }
 
 }
