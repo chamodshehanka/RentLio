@@ -1,6 +1,7 @@
 package com.chamodshehanka.rentLioClient.view.controller;
 
 import com.chamodshehanka.rentLioClient.controller.DriverController;
+import com.chamodshehanka.rentLioClient.util.AlertBuilder;
 import com.chamodshehanka.rentLioClient.util.IDGenerator;
 import com.chamodshehanka.rentLioClient.view.tableModel.DriverTableModel;
 import com.chamodshehanka.rentLioCommon.dto.DriverDTO;
@@ -74,6 +75,40 @@ public class ManageDriverUIController implements Initializable{
     }
 
     @FXML
+    private void addDriverAction(){
+        DriverDTO driverDTO = new DriverDTO(
+                txtDriverId.getText(),
+                txtDriverName.getText(),
+                txtDriverAddress.getText(),
+                txtEmail.getText(),
+                Integer.valueOf(txtTel.getText()),
+                txtNIC.getText(),
+                "Available"
+        );
+
+        try {
+            boolean isAdded = DriverController.addDriver(driverDTO);
+            if (isAdded){
+                new AlertBuilder("info","Manage Driver","Driver Add",
+                        "Driver has been successfully added !!");
+                generateDriverId();
+                loadDriverTableView();
+                txtDriverName.setText("");
+                txtDriverAddress.setText("");
+                txtEmail.setText("");
+                txtTel.setText("");
+                txtNIC.setText("");
+                txtDriverName.requestFocus();
+            }else {
+                new AlertBuilder("error","Manage Driver","Driver Add",
+                        "Driver could't add");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void searchById(){
         try {
             DriverDTO driverDTO = DriverController.getDriverBy(txtDriverId.getText());
@@ -83,21 +118,81 @@ public class ManageDriverUIController implements Initializable{
                 txtEmail.setText(driverDTO.getEmail());
                 txtTel.setText(String.valueOf(driverDTO.getTel()));
                 txtNIC.setText(driverDTO.getDriverNIC());
+            }else {
+                new AlertBuilder("warn","Manage Driver","Driver Search",
+                        "Driver couldn't found");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void generateDriverId(){
+    @FXML
+    private void updateDriverAction(){
+
         try {
-            txtDriverId.setText(IDGenerator.getNewID("driver","D"));
+            String driverStatus = DriverController.getDriverBy(txtDriverId.getText()).getState();
+            DriverDTO driverDTO = new DriverDTO(
+                    txtDriverId.getText(),
+                    txtDriverName.getText(),
+                    txtDriverAddress.getText(),
+                    txtEmail.getText(),
+                    Integer.valueOf(txtTel.getText()),
+                    txtNIC.getText(),
+                    driverStatus
+            );
+
+            boolean isUpdated = DriverController.updateDriver(driverDTO);
+
+            if (isUpdated){
+                new AlertBuilder("info","Manage Driver","Driver Update",
+                        "Driver has been successfully updated !!");
+            }else {
+                new AlertBuilder("error","Manage Driver","Driver Update",
+                        "Something wrong");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    @FXML
+    private void deleteDriverAction(){
+        try {
+            boolean isDeleted = DriverController.deleteDriver(txtDriverId.getText());
+            if (isDeleted){
+                new AlertBuilder("info","Manage Driver","Driver Delete",
+                        "Driver has been successfully deleted !!");
+            }else {
+                new AlertBuilder("error","Manage Driver","Driver Delete",
+                        "Driver couldn't delete");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void getSelectedItem(){
+        String driverId = tblDriver.getSelectionModel().getSelectedItem().getDriverId();
+        txtDriverId.setText(driverId);
+        searchById();
+    }
+
+    private void generateDriverId(){
+        try {
+            txtDriverId.setText(IDGenerator.getNewID("driver","D"));
+            txtDriverName.requestFocus();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     private void loadDriverTableView(){
+
+        tblDriver.refresh();
+
         colDriverId.setCellValueFactory(new PropertyValueFactory<>("driverId"));
         colDriverName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
