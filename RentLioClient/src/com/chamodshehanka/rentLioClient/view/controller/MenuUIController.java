@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
  **/
 public class MenuUIController implements Initializable{
 
-
     @FXML
     private JFXButton btnRes;
 
