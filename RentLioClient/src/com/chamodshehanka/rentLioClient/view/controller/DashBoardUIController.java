@@ -4,7 +4,6 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,7 +24,7 @@ public class DashBoardUIController implements Initializable {
     public AnchorPane rootPane;
 
     @FXML
-    private AnchorPane parameterizedPane;
+    public AnchorPane parameterizedPane;
 
     @FXML
     public AnchorPane paneTopHeader;
@@ -80,7 +79,7 @@ public class DashBoardUIController implements Initializable {
     private void loadMenuUI(){
         try {
             AnchorPane paneLogin = FXMLLoader
-                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageDriverUI.fxml"));
+                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/MenuUI.fxml"));
             parameterizedPane.getChildren().setAll(paneLogin);
         } catch (IOException e) {
             e.printStackTrace();
@@ -88,7 +87,7 @@ public class DashBoardUIController implements Initializable {
     }
 
     @FXML
-    private void windowClose(ActionEvent event) {
+    private void windowClose() {
         Platform.exit();
     }
 }
