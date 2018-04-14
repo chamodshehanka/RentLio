@@ -77,7 +77,7 @@ public class DashBoardUIController implements Initializable {
     private void loadMenuUI(){
         try {
             AnchorPane paneLogin = FXMLLoader
-                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageDriverUI.fxml"));
+                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageCustomerUI.fxml"));
             parameterizedPane.getChildren().setAll(paneLogin);
         } catch (IOException e) {
             e.printStackTrace();
