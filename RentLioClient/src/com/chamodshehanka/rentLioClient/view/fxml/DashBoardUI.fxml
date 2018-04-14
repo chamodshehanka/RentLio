@@ -20,6 +20,6 @@
          </children>
       </AnchorPane>
       <AnchorPane fx:id="parameterizedPane" layoutY="75.0" prefHeight="625.0" prefWidth="1000.0" />
-      <JFXDrawer fx:id="drawer" defaultDrawerSize="300.0" layoutY="75.0" prefHeight="625.0" prefWidth="300.0" />
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="300.0" layoutY="75.0" prefHeight="625.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

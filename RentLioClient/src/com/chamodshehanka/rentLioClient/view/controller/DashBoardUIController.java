@@ -49,6 +49,7 @@ public class DashBoardUIController implements Initializable {
                     .getResource("/com/chamodshehanka/rentLioClient/view/fxml/SideMenuUI.fxml"));
             drawer.setSidePane(sideAnchorPane);
             drawer.close();
+            drawer.setVisible(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,6 +64,7 @@ public class DashBoardUIController implements Initializable {
                 try {
                     sideAnchorPane = FXMLLoader.load(getClass()
                             .getResource("/com/chamodshehanka/rentLioClient/view/fxml/SideMenuUI.fxml"));
+                    drawer.setVisible(true);
                     drawer.setSidePane(sideAnchorPane);
                     drawer.open();
                 } catch (IOException e1) {
@@ -70,6 +72,7 @@ public class DashBoardUIController implements Initializable {
                 }
             } else {
                 drawer.close();
+                drawer.setVisible(false);
             }
         });
     }
@@ -77,7 +80,7 @@ public class DashBoardUIController implements Initializable {
     private void loadMenuUI(){
         try {
             AnchorPane paneLogin = FXMLLoader
-                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/MenuUI.fxml"));
+                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageDriverUI.fxml"));
             parameterizedPane.getChildren().setAll(paneLogin);
         } catch (IOException e) {
             e.printStackTrace();

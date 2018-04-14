@@ -1,7 +1,6 @@
 package com.chamodshehanka.rentLioClient.view.controller;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -35,7 +34,7 @@ public class MenuUIController implements Initializable{
     }
 
     @FXML
-    private void loadReservationUI(ActionEvent actionEvent){
+    private void loadReservationUI(){
         System.out.println("Reservation UI");
     }
 
