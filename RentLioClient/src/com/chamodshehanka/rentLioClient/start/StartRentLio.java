@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import lk.vivoxalabs.customstage.CustomStage;
 
 /**
  * @author chamodshehanka on 4/2/2018
@@ -14,6 +15,7 @@ import javafx.stage.StageStyle;
  **/
 public class StartRentLio extends Application {
 
+    public static CustomStage customStage;
     private double xOffset = 0;
     private double yOffset = 0;
 

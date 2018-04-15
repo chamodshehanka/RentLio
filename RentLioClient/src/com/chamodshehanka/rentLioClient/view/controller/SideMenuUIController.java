@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
@@ -43,16 +44,38 @@ public class SideMenuUIController implements Initializable{
     }
 
     @FXML
-    private void loadManageCustomerUI() {
-        FXMLLoader customerFxmlLoader = new FXMLLoader(getClass()
-                .getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageCustomerUI.fxml"));
-        try {
-            Parent customerParent = FXMLLoader.load(getClass()
-                    .getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageCustomerUI.fxml"));
-            ManageCustomerUIController manageCustomerUIController = customerFxmlLoader.getController();
+    public void loadManageCustomerUI() {
 
+        AnchorPane customerPane = null;
+        try {
+             customerPane = FXMLLoader.load(getClass()
+                    .getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageCustomerUI.fxml"));
+            System.out.println(customerPane);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+        FXMLLoader dashboardLoader = new FXMLLoader(getClass()
+                .getResource("/com/chamodshehanka/rentLioClient/view/fxml/DashBoardUI.fxml"));
+        try {
+            dashboardLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        DashBoardUIController dashBoardUIController = dashboardLoader.getController();
+
+        System.out.println("EEE"+dashBoardUIController);
+
+        if (dashBoardUIController != null){
+            boolean isSet = dashBoardUIController.setAnchorPaneTo(customerPane);
+
+            if (isSet){
+                System.out.println("Done");
+            }else {
+                System.out.println("Error");
+            }
+        }else {
+            System.out.println(dashBoardUIController + "is null");
         }
     }
 

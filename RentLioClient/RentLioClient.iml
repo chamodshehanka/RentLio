@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="RentLioCommon" />
     <orderEntry type="library" name="jfoenix-9.0.1" level="project" />
+    <orderEntry type="library" name="CustomStage-v1.2.1" level="project" />
   </component>
 </module>
