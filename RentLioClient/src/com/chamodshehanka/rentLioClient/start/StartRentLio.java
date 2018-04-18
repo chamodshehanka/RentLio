@@ -15,7 +15,7 @@ import lk.vivoxalabs.customstage.CustomStage;
  **/
 public class StartRentLio extends Application {
 
-    public static CustomStage customStage;
+    private static CustomStage customStage;
     private double xOffset = 0;
     private double yOffset = 0;
 
@@ -33,6 +33,8 @@ public class StartRentLio extends Application {
             primaryStage.setX(event.getScreenX() - xOffset);
             primaryStage.setY(event.getScreenY() - yOffset);
         });
+
+//        customStage.
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.getIcons().add(new Image(getClass()
