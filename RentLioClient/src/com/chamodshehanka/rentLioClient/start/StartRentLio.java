@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import lk.vivoxalabs.customstage.CustomStage;
 
 /**
  * @author chamodshehanka on 4/2/2018
@@ -15,7 +14,7 @@ import lk.vivoxalabs.customstage.CustomStage;
  **/
 public class StartRentLio extends Application {
 
-    private static CustomStage customStage;
+//    private static SceneManager sceneManager;
     private double xOffset = 0;
     private double yOffset = 0;
 
@@ -34,7 +33,6 @@ public class StartRentLio extends Application {
             primaryStage.setY(event.getScreenY() - yOffset);
         });
 
-//        customStage.
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.getIcons().add(new Image(getClass()
