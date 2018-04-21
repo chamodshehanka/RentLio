@@ -1,10 +1,12 @@
 package com.chamodshehanka.rentLioClient.start;
 
+import com.vivoxalabs.scenemanager.SceneManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -14,7 +16,7 @@ import javafx.stage.StageStyle;
  **/
 public class StartRentLio extends Application {
 
-//    private static SceneManager sceneManager;
+    private static SceneManager sceneManager;
     private double xOffset = 0;
     private double yOffset = 0;
 
@@ -33,6 +35,10 @@ public class StartRentLio extends Application {
             primaryStage.setY(event.getScreenY() - yOffset);
         });
 
+        AnchorPane dashPane = FXMLLoader.load(getClass()
+                .getResource("/com/chamodshehanka/rentLioClient/view/fxml/DashBoardUI.fxml"));
+
+//        sceneManager.addScene("sceneDashBoard",dashPane,);
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.getIcons().add(new Image(getClass()
