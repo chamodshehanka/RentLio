@@ -1,14 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXColorPicker?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.chamodshehanka.rentLioClient.view.controller.ManageVehicleUIController"
-            prefHeight="625.0" prefWidth="1000.0">
 
+<AnchorPane prefHeight="625.0" prefWidth="1000.0" styleClass="root" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.ManageVehicleUIController">
+   <children>
+      <AnchorPane layoutX="40.0" layoutY="58.0" prefHeight="285.0" prefWidth="921.0" styleClass="container">
+         <children>
+            <AnchorPane layoutY="1.0" prefHeight="10.0" prefWidth="921.0" styleClass="container-header" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+            <AnchorPane layoutY="275.0" prefHeight="10.0" prefWidth="950.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <JFXTextField fx:id="txtVehicleNumber" focusColor="WHITE" labelFloat="true" layoutX="46.0" layoutY="41.0" prefHeight="28.0" prefWidth="105.0" promptText="Vehicle Number" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="218.0" layoutY="229.0" onAction="#addAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Add">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="333.0" layoutY="229.0" onAction="#updateAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Update">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="456.0" layoutY="229.0" onAction="#searchById" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Search">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="556.0" layoutY="228.0" onAction="#deleteAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Delete">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="680.0" layoutY="230.0" styleClass="button-white" text="Print Driver Details" textFill="#2ecc71">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXComboBox fx:id="cmbVehicleType" focusColor="WHITE" labelFloat="true" layoutX="46.0" layoutY="91.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Type" unFocusColor="WHITE" />
+            <JFXComboBox fx:id="cmbVehicleBrand" focusColor="WHITE" labelFloat="true" layoutX="45.0" layoutY="139.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Brand" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtVehicleModel" focusColor="WHITE" labelFloat="true" layoutX="47.0" layoutY="186.0" prefHeight="28.0" prefWidth="49.0" promptText="Model" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtChassisNumber" focusColor="WHITE" labelFloat="true" layoutX="181.0" layoutY="42.0" prefHeight="28.0" prefWidth="105.0" promptText="Chassis Number" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtFuel" focusColor="WHITE" labelFloat="true" layoutX="106.0" layoutY="186.0" prefHeight="28.0" prefWidth="45.0" promptText="Fuel" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtKMRS" focusColor="WHITE" labelFloat="true" layoutX="180.0" layoutY="134.0" prefHeight="28.0" prefWidth="105.0" promptText="Rs. per km" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtEngineCapacity" focusColor="WHITE" labelFloat="true" layoutX="180.0" layoutY="186.0" prefHeight="28.0" prefWidth="105.0" promptText="Engine Capacity" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXColorPicker fx:id="pkVehicleColor" layoutX="325.0" layoutY="44.0" prefHeight="25.0" prefWidth="105.0" promptText="Color" />
+            <JFXTextField fx:id="txtNoOfDoors" focusColor="WHITE" labelFloat="true" layoutX="326.0" layoutY="88.0" prefHeight="28.0" prefWidth="105.0" promptText="No of Doors" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtInsuranceCom" focusColor="WHITE" labelFloat="true" layoutX="327.0" layoutY="134.0" prefHeight="28.0" prefWidth="105.0" promptText="Insurance Com" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtComment" focusColor="WHITE" labelFloat="true" layoutX="328.0" layoutY="186.0" prefHeight="28.0" prefWidth="105.0" promptText="Comment" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <Text fill="WHITE" layoutX="460.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Image">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="imgVehicle" fitHeight="140.0" fitWidth="255.0" layoutX="464.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+            <JFXButton layoutX="556.0" layoutY="43.0" onAction="#browseImgURL" prefHeight="24.0" prefWidth="76.0" style="-fx-background-color: #2ecc71;" text="Browse" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="641.0" layoutY="43.0" onAction="#removeImgURL" prefHeight="27.0" prefWidth="76.0" style="-fx-background-color: #e74c3c;" text="Remove" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="404.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGE VEHICLES">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutY="350.0" prefHeight="275.0" prefWidth="1000.0" styleClass="container-dark">
+         <children>
+            <TableView fx:id="tblCustomer" layoutX="40.0" layoutY="40.0" onMouseClicked="#getSelectedItem" prefHeight="220.0" prefWidth="930.0">
+               <columns>
+                  <TableColumn fx:id="colCustomerId" prefWidth="83.00000762939453" text="Customer ID" />
+                  <TableColumn fx:id="colCustomerName" prefWidth="87.33334350585938" text="Name " />
+                  <TableColumn fx:id="colAddress" prefWidth="125.66665649414062" text="Address" />
+                  <TableColumn fx:id="colEmail" prefWidth="158.33334350585938" text="Email" />
+                  <TableColumn fx:id="colTel" prefWidth="116.0" text="Telephone" />
+                  <TableColumn fx:id="colNIC" prefWidth="129.0" text="National ID" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <JFXTextField fx:id="txtStatus" focusColor="WHITE" labelFloat="true" layoutX="221.0" layoutY="146.0" prefHeight="28.0" prefWidth="105.0" promptText="Status" styleClass="text-field-white" unFocusColor="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+   </children>
 </AnchorPane>
