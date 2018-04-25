@@ -6,6 +6,8 @@ import com.chamodshehanka.rentLioCommon.dto.AdminDTO;
 import com.chamodshehanka.rentLioCommon.dto.ReceptionDTO;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -116,4 +118,8 @@ public class LoginUIController implements Initializable {
         }
     }
 
+    @FXML
+    private void windowClose(ActionEvent event) {
+        Platform.exit();
+    }
 }

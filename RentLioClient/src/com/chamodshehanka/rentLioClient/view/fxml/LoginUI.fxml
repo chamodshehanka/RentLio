@@ -81,7 +81,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="35.0" prefWidth="1000.0" styleClass="title-bar">
          <children>
-            <JFXButton layoutX="11.0" layoutY="5.0" prefHeight="25.0" prefWidth="25.0" styleClass="close-button" />
+            <JFXButton layoutX="11.0" layoutY="5.0" onAction="#windowClose" prefHeight="25.0" prefWidth="25.0" styleClass="close-button" />
             <JFXButton layoutX="44.0" layoutY="5.0" prefHeight="25.0" prefWidth="25.0" styleClass="minimize-button" />
             <JFXButton layoutX="77.0" layoutY="5.0" prefHeight="25.0" prefWidth="25.0" styleClass="maximize-button" />
          </children>

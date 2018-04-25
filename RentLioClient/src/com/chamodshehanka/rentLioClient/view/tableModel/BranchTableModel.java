@@ -10,9 +10,9 @@ import javafx.beans.property.SimpleStringProperty;
 public class BranchTableModel {
 
     private SimpleStringProperty branchId = new SimpleStringProperty("");
-    private SimpleStringProperty registerId = new SimpleStringProperty("");;
-    private SimpleStringProperty address = new SimpleStringProperty("");;
-    private SimpleStringProperty email = new SimpleStringProperty("");;
+    private SimpleStringProperty registerId = new SimpleStringProperty("");
+    private SimpleStringProperty address = new SimpleStringProperty("");
+    private SimpleStringProperty email = new SimpleStringProperty("");
     private SimpleIntegerProperty tel = new SimpleIntegerProperty(0);
     private SimpleStringProperty postalCode = new SimpleStringProperty("");
 

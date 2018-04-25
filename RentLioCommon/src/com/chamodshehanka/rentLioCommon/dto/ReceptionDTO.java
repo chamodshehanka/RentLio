@@ -31,6 +31,10 @@ public class ReceptionDTO extends SuperDTO{
         this.image = image;
     }
 
+    public ReceptionDTO(String text, String value, String text1, String text2, String text3, Integer integer, String text4) {
+        super();
+    }
+
     @Override
     public String toString() {
         return "ReceptionDTO{" +
