@@ -7,9 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="RentLioCommon" />
-    <orderEntry type="library" name="jfoenix-9.0.1" level="project" />
-    <orderEntry type="library" name="CustomStage-v1.2.1" level="project" />
-    <orderEntry type="library" name="SceneManager" level="project" />
+    <orderEntry type="module" module-name="RentLioCommon" exported="" />
+    <orderEntry type="library" exported="" name="jfoenix-9.0.1" level="project" />
+    <orderEntry type="library" name="CustomStage-v1.3.0" level="project" />
   </component>
 </module>

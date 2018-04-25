@@ -67,7 +67,7 @@
                   <Font name="Calibri Bold" size="16.0" />
                </font>
             </JFXTextField>
-            <JFXButton layoutX="201.0" layoutY="365.0" prefHeight="35.0" prefWidth="75.0" style="-fx-background-color: #2ecc71;" text="Login" textFill="WHITE">
+            <JFXButton layoutX="201.0" layoutY="365.0" onAction="#receptionLoginAction" prefHeight="35.0" prefWidth="75.0" style="-fx-background-color: #2ecc71;" text="Login" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>

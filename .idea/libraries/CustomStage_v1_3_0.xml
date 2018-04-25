@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="SceneManager">
+  <library name="CustomStage-v1.3.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/SceneManager.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/CustomStage-v1.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

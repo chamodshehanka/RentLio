@@ -46,6 +46,7 @@ public class LoginUIController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadAdminList();
+        loadReceptionList();
     }
 
     @FXML
