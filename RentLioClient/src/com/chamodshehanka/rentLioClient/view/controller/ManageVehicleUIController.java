@@ -125,7 +125,7 @@ public class ManageVehicleUIController implements Initializable{
 
     private ObservableList<VehicleTableModel> vehicleTableModelObservableList = FXCollections.observableArrayList();
 
-    private Stage fileChooseStage;
+    private Stage fileChooseStage = new Stage();
     private String fileName;
 
     @Override
