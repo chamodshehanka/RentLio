@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="RentLioCommon" exported="" />
     <orderEntry type="library" exported="" name="jfoenix-9.0.1" level="project" />
     <orderEntry type="library" name="CustomStage-v1.3.0" level="project" />
+    <orderEntry type="library" name="Hibernate 5.2.14-5.2.14" level="project" />
   </component>
 </module>

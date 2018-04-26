@@ -21,7 +21,7 @@ public class StartRentLio extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent parent = FXMLLoader.load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageBranchUI.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageVehicleUI.fxml"));
         Scene scene = new Scene(parent);
 
         parent.setOnMousePressed(event -> {
