@@ -185,7 +185,7 @@ public class ManageVehicleUIController implements Initializable{
     }
 
     private void setImgVehicle(String imgName){
-        imgVehicle.setImage(new Image("/com/chamodshehanka/rentLioClient/view/images/'"+imgName+"'.jpg"));
+        imgVehicle.setImage(new Image("/com/chamodshehanka/rentLioClient/view/images/"+imgName+".jpg"));
     }
 
     @FXML
@@ -249,7 +249,7 @@ public class ManageVehicleUIController implements Initializable{
             }
 
             if (mimeType != null && mimeType.split("/")[0].equals("image")) {
-                fileName = fileName.substring(24,fileName.length()-4);
+                fileName = fileName.substring(24,fileName.length());
                 fileChooser.showSaveDialog(fileChooseStage);
                 setImgVehicle(fileName);
             }else {
@@ -266,7 +266,7 @@ public class ManageVehicleUIController implements Initializable{
         colVehicleType.setCellValueFactory(new PropertyValueFactory<>("vehicleType"));
         colVehicleBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
         colModel.setCellValueFactory(new PropertyValueFactory<>("model"));
-        colImgURL.setCellValueFactory(new PropertyValueFactory<>("imgURL"));
+        colImgURL.setCellValueFactory(new PropertyValueFactory<>("imageURL"));
         colModelYear.setCellValueFactory(new PropertyValueFactory<>("modelYear"));
         colChassieNo.setCellValueFactory(new PropertyValueFactory<>("chasieNo"));
         colFuel.setCellValueFactory(new PropertyValueFactory<>("fuel"));
