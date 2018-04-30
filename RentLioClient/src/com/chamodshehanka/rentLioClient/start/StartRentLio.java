@@ -18,7 +18,7 @@ public class StartRentLio extends Application {
     private double yOffset = 0;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         CustomStage.getDefaultSceneManager().automate(getClass()
                 .getResource("/com/chamodshehanka/rentLioClient/view/fxml/DashBoardUI.fxml"));
         Parent parent = CustomStage.getDefaultSceneManager().getScene("LoginUI");
