@@ -36,6 +36,11 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
+    private void viewCustomerAction() {
+        System.out.println("Make View Customer Popup");
+    }
+
+    @FXML
     private void findCustomerAction(){
         try {
             CustomerDTO customerDTO = CustomerController.getCustomerById(txtCustomerID.getText());
@@ -55,7 +60,7 @@ public class ManageReservationUIController implements Initializable{
             e.printStackTrace();
         }
         String customerName = txtCustomerName.getText();
-        for (CustomerDTO customerDTO: customerDTOList
+        for (CustomerDTO customerDTO : customerDTOList
              ) {
             if (customerDTO.getCustomerName().equals(customerName)){
                 txtCustomerID.setText(customerDTO.getCustomerId());

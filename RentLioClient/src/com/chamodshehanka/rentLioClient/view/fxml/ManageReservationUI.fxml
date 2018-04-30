@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <AnchorPane prefHeight="625.0" prefWidth="1000.0" styleClass="root" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.ManageReservationUIController">
    <children>
       <Text fill="WHITE" layoutX="414.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGE RESERVATIONS">
@@ -16,13 +13,15 @@
       <AnchorPane layoutX="38.0" layoutY="66.0" prefHeight="170.0" prefWidth="921.0" styleClass="container">
          <children>
             <AnchorPane prefHeight="10.0" prefWidth="950.0" styleClass="container-header" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <AnchorPane layoutY="160.0" prefHeight="10.0" prefWidth="950.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <AnchorPane layoutY="160.0" prefHeight="10.0" prefWidth="921.0" styleClass="container-footer"
+                        AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
             <JFXTextField fx:id="txtReservationID" focusColor="WHITE" labelFloat="true" layoutX="46.0" layoutY="69.0" prefHeight="28.0" prefWidth="80.0" promptText="Reservation ID" styleClass="text-field-white" unFocusColor="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </JFXTextField>
-            <JFXButton layoutX="234.0" layoutY="113.0" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Add">
+            <JFXButton layoutX="90.0" layoutY="113.0" onAction="#findCustomerAction" prefHeight="25.0" prefWidth="90.0"
+                       styleClass="button-green" text="Search">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>
@@ -42,6 +41,12 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </JFXTextField>
+            <JFXButton layoutX="194.0" layoutY="113.0" onAction="#viewCustomerAction" prefHeight="25.0"
+                       prefWidth="126.0" styleClass="button-green" text="View Customer">
+               <font>
+                  <Font name="Calibri Bold" size="16.0"/>
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>
