@@ -86,22 +86,16 @@ public class DashBoardUIController implements Initializable {
         }
     }
 
-    boolean setAnchorPaneTo(AnchorPane anchorPane) {
+    void setAnchorPaneTo(AnchorPane anchorPane) {
 
-        System.out.println("In method"+anchorPane);
-
-        System.out.println("Method Called");
         if (anchorPane != null) {
             try {
-                System.out.println("Anchor Pane setting..");
                 parameterizedPane.getChildren().setAll(anchorPane);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return true;
         } else {
-            System.out.println("there is no anchor pane");
-            return false;
+            System.out.println("Anchor pane is null");
         }
     }
 

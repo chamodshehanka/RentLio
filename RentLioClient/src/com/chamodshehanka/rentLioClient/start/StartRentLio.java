@@ -1,13 +1,12 @@
 package com.chamodshehanka.rentLioClient.start;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import lk.vivoxalabs.scenemanager.SceneManager;
+import lk.vivoxalabs.customstage.CustomStage;
 
 /**
  * @author chamodshehanka on 4/2/2018
@@ -15,14 +14,14 @@ import lk.vivoxalabs.scenemanager.SceneManager;
  **/
 public class StartRentLio extends Application {
 
-    private static SceneManager sceneManager;
     private double xOffset = 0;
     private double yOffset = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent parent = FXMLLoader.load(getClass()
-                .getResource("/com/chamodshehanka/rentLioClient/view/fxml/LoginUI.fxml"));
+        CustomStage.getDefaultSceneManager().automate(getClass()
+                .getResource("/com/chamodshehanka/rentLioClient/view/fxml/DashBoardUI.fxml"));
+        Parent parent = CustomStage.getDefaultSceneManager().getScene("LoginUI");
         Scene scene = new Scene(parent);
 
         parent.setOnMousePressed(event -> {
@@ -34,8 +33,6 @@ public class StartRentLio extends Application {
             primaryStage.setX(event.getScreenX() - xOffset);
             primaryStage.setY(event.getScreenY() - yOffset);
         });
-
-//        sceneManager.automate("/com/chamodshehanka/rentLioClient/view/fxml");
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.getIcons().add(new Image(getClass()

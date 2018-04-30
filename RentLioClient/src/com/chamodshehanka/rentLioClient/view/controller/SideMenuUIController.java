@@ -1,15 +1,14 @@
 package com.chamodshehanka.rentLioClient.view.controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import lk.vivoxalabs.customstage.CustomStage;
+import lk.vivoxalabs.scenemanager.SceneManager;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -34,68 +33,51 @@ public class SideMenuUIController implements Initializable{
 
     @FXML
     private void loadManageAccountUI() {
-
+        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
+        ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
+                .setAnchorPaneTo(sceneManager.getScene("ManageAccountUI"));
     }
 
     @FXML
     private void loadManageBranchUI() {
-
+        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
+        ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
+                .setAnchorPaneTo(sceneManager.getScene("ManageBranchUI"));
     }
 
     @FXML
     public void loadManageCustomerUI() {
-
-        AnchorPane customerPane = null;
-        try {
-             customerPane = FXMLLoader.load(getClass()
-                    .getResource("/com/chamodshehanka/rentLioClient/view/fxml/ManageCustomerUI.fxml"));
-            System.out.println(customerPane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        FXMLLoader dashboardLoader = new FXMLLoader(getClass()
-                .getResource("/com/chamodshehanka/rentLioClient/view/fxml/DashBoardUI.fxml"));
-        try {
-            dashboardLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        DashBoardUIController dashBoardUIController = dashboardLoader.getController();
-
-        System.out.println("EEE"+dashBoardUIController);
-
-        if (dashBoardUIController != null){
-            boolean isSet = dashBoardUIController.setAnchorPaneTo(customerPane);
-
-            if (isSet){
-                System.out.println("Done");
-            }else {
-                System.out.println("Error");
-            }
-        }else {
-            System.out.println("dashBoardUIController" + "is null");
-        }
+        SceneManager manager = CustomStage.getDefaultSceneManager();
+        ((DashBoardUIController)manager.getController("DashBoardUI"))
+                .setAnchorPaneTo(manager.getScene("ManageCustomerUI"));
     }
 
     @FXML
     private void loadManageDriverUI() {
-
+        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
+        ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
+                .setAnchorPaneTo(sceneManager.getScene("ManageDriverUI"));
     }
 
     @FXML
     private void loadManageReceptionUI() {
-
+        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
+        ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
+                .setAnchorPaneTo(sceneManager.getScene("ManageReceptionUI"));
     }
 
     @FXML
     private void loadManageVehicleUI() {
-
+        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
+        ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
+                .setAnchorPaneTo(sceneManager.getScene("ManageVehicleUI"));
     }
 
     @FXML
     private void logOutAction() {
-
+        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
+        ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
+                .setAnchorPaneTo(sceneManager.getScene("LoginUI"));
     }
 
     private void setUpUI(){

@@ -7,15 +7,13 @@ import com.chamodshehanka.rentLioCommon.dto.ReceptionDTO;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 import javafx.scene.layout.AnchorPane;
+import lk.vivoxalabs.customstage.CustomStage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -93,13 +91,8 @@ public class LoginUIController implements Initializable {
     }
 
     private void loadDashBoardUI(){
-        try {
-            AnchorPane menuAnchorPane = FXMLLoader
-                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/DashBoardUI.fxml"));
-            rootLogin.getChildren().setAll(menuAnchorPane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        AnchorPane menuAnchorPane = CustomStage.getDefaultSceneManager().getScene("DashBoardUI");
+        rootLogin.getChildren().setAll(menuAnchorPane);
     }
 
     private void loadReceptionList(){
@@ -119,7 +112,7 @@ public class LoginUIController implements Initializable {
     }
 
     @FXML
-    private void windowClose(ActionEvent event) {
+    private void windowClose() {
         Platform.exit();
     }
 }
