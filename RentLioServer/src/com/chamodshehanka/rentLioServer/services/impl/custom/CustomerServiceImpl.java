@@ -53,22 +53,22 @@ public class CustomerServiceImpl extends UnicastRemoteObject implements Customer
     }
 
     @Override
-    public boolean addCustomerObserver(CustomerObserver customerObserver) throws Exception {
+    public boolean addCustomerObserver(CustomerObserver customerObserver) {
         return CUSTOMER_OBSERVABLE.addCustomerObserver(customerObserver);
     }
 
     @Override
-    public boolean removeCustomerObserver(CustomerObserver customerObserver) throws Exception {
+    public boolean removeCustomerObserver(CustomerObserver customerObserver) {
         return CUSTOMER_OBSERVABLE.removeCustomerObserver(customerObserver);
     }
 
     @Override
-    public boolean reserve(Object id) throws Exception {
+    public boolean reserve(Object id) {
         return customerServiceReservation.reserve(id,this,false);
     }
 
     @Override
-    public boolean release(Object id) throws Exception {
+    public boolean release(Object id) {
         return customerServiceReservation.release(id);
     }
 }

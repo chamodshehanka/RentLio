@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="625.0" prefWidth="1000.0" styleClass="root" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.ManageReservationUIController">
    <children>
@@ -12,5 +13,36 @@
             <Font name="Calibri Bold" size="24.0" />
          </font>
       </Text>
+      <AnchorPane layoutX="38.0" layoutY="66.0" prefHeight="170.0" prefWidth="921.0" styleClass="container">
+         <children>
+            <AnchorPane prefHeight="10.0" prefWidth="950.0" styleClass="container-header" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane layoutY="160.0" prefHeight="10.0" prefWidth="950.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <JFXTextField fx:id="txtReservationID" focusColor="WHITE" labelFloat="true" layoutX="46.0" layoutY="69.0" prefHeight="28.0" prefWidth="80.0" promptText="Reservation ID" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="234.0" layoutY="113.0" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Add">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="624.0" layoutY="113.0" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Delete">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="txtCustomerID" focusColor="WHITE" labelFloat="true" layoutX="147.0" layoutY="69.0" onAction="#findCustomerAction" prefHeight="28.0" prefWidth="80.0" promptText="Customer ID" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtCustomerName" focusColor="WHITE" labelFloat="true" layoutX="239.0" layoutY="69.0" onAction="#getCustomerByName" prefHeight="28.0" prefWidth="80.0" promptText="Customer ID" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -39,46 +39,46 @@ public class ReservationServiceImpl extends UnicastRemoteObject implements Reser
 
     @Override
     public boolean updateReservation(ReservationDTO reservationDTO) throws Exception {
-        return false;
+        return reservationBO.updateReservation(reservationDTO);
     }
 
     @Override
     public boolean deleteReservation(String reservationId) throws Exception {
-        return false;
+        return reservationBO.deleteReservation(reservationId);
     }
 
     @Override
     public ReservationDTO findById(String reservationId) throws Exception {
-        return null;
+        return reservationBO.getReservationById(reservationId);
     }
 
     @Override
     public List<ReservationDTO> getAllReservations() throws Exception {
-        return null;
+        return reservationBO.getAllReservations();
     }
 
     @Override
     public boolean addReservationObserver(ReservationObserver reservationObserver) throws Exception {
-        return false;
+        return RESERVATION_OBSERVABLE.addReservationObserver(reservationObserver);
     }
 
     @Override
     public boolean removeReservationObserver(ReservationObserver reservationObserver) throws Exception {
-        return false;
+        return RESERVATION_OBSERVABLE.removeReservationObserver(reservationObserver);
     }
 
     @Override
     public List<ReservationDTO> findCustomerReservation(String customerId) throws Exception {
-        return null;
+        return reservationBO.findReservationCustomer(customerId);
     }
 
     @Override
     public boolean reserve(Object id) throws Exception {
-        return false;
+        return reservationServiceReservation.reserve(id,this,false);
     }
 
     @Override
     public boolean release(Object id) throws Exception {
-        return false;
+        return reservationServiceReservation.release(id);
     }
 }

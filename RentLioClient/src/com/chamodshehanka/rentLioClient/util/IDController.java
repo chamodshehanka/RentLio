@@ -71,7 +71,6 @@ class IDController {
                 System.out.println("Invalid table");
 
         }
-
         return lastId;
     }
 
