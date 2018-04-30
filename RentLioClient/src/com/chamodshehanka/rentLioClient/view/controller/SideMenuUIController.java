@@ -28,7 +28,9 @@ public class SideMenuUIController implements Initializable{
 
     @FXML
     private void loadAllReportsUI() {
-
+        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
+        ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
+                .setAnchorPaneTo(sceneManager.getScene("ReportsUI"));
     }
 
     @FXML
