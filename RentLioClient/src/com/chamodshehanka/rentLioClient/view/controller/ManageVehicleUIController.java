@@ -290,7 +290,6 @@ public class ManageVehicleUIController implements Initializable{
                 vehicleTableModel.setBrand(vehicleDTO.getVehicleBrand());
                 vehicleTableModel.setModel(vehicleDTO.getVehicleModel());
                 vehicleTableModel.setImageURL(vehicleDTO.getImageURL());
-                System.out.println(vehicleDTO.getImageURL());
                 vehicleTableModel.setModelYear(vehicleDTO.getModelYear());
                 vehicleTableModel.setChasieNo(vehicleDTO.getChassiNumber());
                 vehicleTableModel.setFuel(vehicleDTO.getFuel());
