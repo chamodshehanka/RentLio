@@ -73,7 +73,7 @@ public class SideMenuUIController implements Initializable{
     @FXML
     private void logOutAction() {
         ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
-                .setAnchorPaneTo(sceneManager.getScene("LoginUI"));
+                .logOutAction();
     }
 
     private void setUpUI(){

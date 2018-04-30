@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.vivoxalabs.customstage.CustomStage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -97,6 +98,17 @@ public class DashBoardUIController implements Initializable {
         } else {
             System.out.println("Anchor pane is null");
         }
+    }
+
+    void logOutAction(){
+        AnchorPane loginPane = null;
+        try {
+            loginPane = FXMLLoader
+                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/LoginUI.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        rootPane.getChildren().setAll(loginPane);
     }
 
     @FXML
