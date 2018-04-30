@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="625.0" prefWidth="1000.0" styleClass="background" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.MenuUIController">
+<AnchorPane fx:id="rootMenu" prefHeight="625.0" prefWidth="1000.0" styleClass="background" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.MenuUIController">
    <children>
       <JFXButton fx:id="btnRes" contentDisplay="TOP" defaultButton="true" layoutX="53.0" layoutY="146.0" onAction="#loadReservationUI" prefHeight="320.0" prefWidth="190.0" styleClass="container-green" text="Reservation" textFill="WHITE">
          <font>

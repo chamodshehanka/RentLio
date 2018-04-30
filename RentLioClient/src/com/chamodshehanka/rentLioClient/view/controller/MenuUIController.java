@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import lk.vivoxalabs.customstage.CustomStage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,6 +16,9 @@ import java.util.ResourceBundle;
  * @project RentLio
  **/
 public class MenuUIController implements Initializable{
+
+    @FXML
+    private AnchorPane rootMenu;
 
     @FXML
     private JFXButton btnRes;
@@ -27,7 +32,6 @@ public class MenuUIController implements Initializable{
     @FXML
     private JFXButton btnGetVehicle;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setUIComponents();
@@ -35,7 +39,8 @@ public class MenuUIController implements Initializable{
 
     @FXML
     private void loadReservationUI(){
-        System.out.println("Reservation UI");
+        AnchorPane reservationPane = CustomStage.getDefaultSceneManager().getScene("ManageReservationUI");
+        rootMenu.getChildren().setAll(reservationPane);
     }
 
     @FXML
