@@ -16,12 +16,13 @@ public class StartRentLio extends Application {
 
     private double xOffset = 0;
     private double yOffset = 0;
+    public static boolean isSplashLoaded = false;
 
     @Override
     public void start(Stage primaryStage) {
         CustomStage.getDefaultSceneManager().automate(getClass()
                 .getResource("/com/chamodshehanka/rentLioClient/view/fxml/DashBoardUI.fxml"));
-        Parent parent = CustomStage.getDefaultSceneManager().getScene("LoginUI");
+        Parent parent = CustomStage.getDefaultSceneManager().getScene("SplashScreenUI");
         Scene scene = new Scene(parent);
 
         parent.setOnMousePressed(event -> {

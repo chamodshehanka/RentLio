@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.SplashScreenUIController">
+   <children>
+      <ImageView fitHeight="505.0" fitWidth="1000.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rentlio-background.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
