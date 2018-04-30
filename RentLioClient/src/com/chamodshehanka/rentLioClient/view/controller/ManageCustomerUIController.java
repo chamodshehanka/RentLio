@@ -3,6 +3,7 @@ package com.chamodshehanka.rentLioClient.view.controller;
 import com.chamodshehanka.rentLioClient.controller.CustomerController;
 import com.chamodshehanka.rentLioClient.util.AlertBuilder;
 import com.chamodshehanka.rentLioClient.util.IDGenerator;
+import com.chamodshehanka.rentLioClient.util.ValidationController;
 import com.chamodshehanka.rentLioClient.view.tableModel.CustomerTableModel;
 import com.chamodshehanka.rentLioCommon.dto.CustomerDTO;
 import com.jfoenix.controls.JFXTextField;
@@ -69,6 +70,17 @@ public class ManageCustomerUIController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         loadCustomerTableView();
         generateCustomerId();
+    }
+
+    @FXML
+    private void validatePhone(){
+        boolean isValidated = new ValidationController().validateTelephone(txtTel.getText());
+        txtTel.getStyleClass().add("text-field-white");
+        if (isValidated){
+            txtTel.getStyleClass().add("text-field-green");
+        }else {
+            txtTel.getStyleClass().add("text-field-red");
+        }
     }
 
     @FXML

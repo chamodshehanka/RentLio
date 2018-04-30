@@ -63,6 +63,18 @@
     -fx-text-fill: #ffffff;
 }
 
+.text-field-green{
+    -fx-prompt-text-fill: #ffffff;
+    -fx-text-fill: #2ecc71;
+}
+
+.text-field-red{
+    -fx-prompt-text-fill: #ffffff;
+    -fx-text-fill: #e74c3c;
+}
+
+
+
 /*Buttons*/
 .button-white{
     -fx-background-color: #ffffff;

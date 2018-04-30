@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <AnchorPane prefHeight="625.0" prefWidth="1000.0" styleClass="root" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.ManageCustomerUIController">
    <children>
       <AnchorPane layoutX="40.0" layoutY="56.0" prefHeight="170.0" prefWidth="921.0" styleClass="container">
@@ -34,7 +30,7 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtTel" focusColor="WHITE" labelFloat="true" layoutX="658.0" layoutY="69.0" prefHeight="28.0" prefWidth="89.0" promptText="Telephone" styleClass="text-field-white" unFocusColor="WHITE">
+            <JFXTextField fx:id="txtTel" focusColor="WHITE" labelFloat="true" layoutX="658.0" layoutY="69.0" onAction="#validatePhone" prefHeight="28.0" prefWidth="89.0" promptText="Telephone" styleClass="text-field-white" unFocusColor="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>

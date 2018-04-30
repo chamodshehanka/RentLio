@@ -45,7 +45,7 @@ public class ManageReservationUIController implements Initializable{
         try {
             CustomerDTO customerDTO = CustomerController.getCustomerById(txtCustomerID.getText());
             if (customerDTO != null){
-                System.out.println(customerDTO.getCustomerName());
+                txtCustomerName.setText(customerDTO.getCustomerName());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,7 +70,6 @@ public class ManageReservationUIController implements Initializable{
             }
         }
     }
-
 
     private void generateReservationID(){
         try {

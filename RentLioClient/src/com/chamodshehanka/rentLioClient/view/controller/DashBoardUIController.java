@@ -2,7 +2,7 @@ package com.chamodshehanka.rentLioClient.view.controller;
 
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
-import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,7 +42,7 @@ public class DashBoardUIController implements Initializable {
     }
 
     private void sideMenuActions(){
-        HamburgerBackArrowBasicTransition transition = new HamburgerBackArrowBasicTransition(hamburger);
+        HamburgerSlideCloseTransition transition = new HamburgerSlideCloseTransition(hamburger);
         try {
             AnchorPane sideAnchorPane = FXMLLoader.load(getClass()
                     .getResource("/com/chamodshehanka/rentLioClient/view/fxml/SideMenuUI.fxml"));
