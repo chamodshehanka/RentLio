@@ -21,6 +21,8 @@ public class SideMenuUIController implements Initializable{
     @FXML
     private ImageView imgUser;
 
+    private SceneManager sceneManager = CustomStage.getDefaultSceneManager();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setUpUI();
@@ -28,56 +30,48 @@ public class SideMenuUIController implements Initializable{
 
     @FXML
     private void loadAllReportsUI() {
-        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
         ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
                 .setAnchorPaneTo(sceneManager.getScene("ReportsUI"));
     }
 
     @FXML
     private void loadManageAccountUI() {
-        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
         ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
                 .setAnchorPaneTo(sceneManager.getScene("ManageAccountUI"));
     }
 
     @FXML
     private void loadManageBranchUI() {
-        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
         ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
                 .setAnchorPaneTo(sceneManager.getScene("ManageBranchUI"));
     }
 
     @FXML
     public void loadManageCustomerUI() {
-        SceneManager manager = CustomStage.getDefaultSceneManager();
-        ((DashBoardUIController)manager.getController("DashBoardUI"))
-                .setAnchorPaneTo(manager.getScene("ManageCustomerUI"));
+        ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
+                .setAnchorPaneTo(sceneManager.getScene("ManageCustomerUI"));
     }
 
     @FXML
     private void loadManageDriverUI() {
-        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
         ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
                 .setAnchorPaneTo(sceneManager.getScene("ManageDriverUI"));
     }
 
     @FXML
     private void loadManageReceptionUI() {
-        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
         ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
                 .setAnchorPaneTo(sceneManager.getScene("ManageReceptionUI"));
     }
 
     @FXML
     private void loadManageVehicleUI() {
-        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
         ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
                 .setAnchorPaneTo(sceneManager.getScene("ManageVehicleUI"));
     }
 
     @FXML
     private void logOutAction() {
-        SceneManager sceneManager = CustomStage.getDefaultSceneManager();
         ((DashBoardUIController)sceneManager.getController("DashBoardUI"))
                 .setAnchorPaneTo(sceneManager.getScene("LoginUI"));
     }
