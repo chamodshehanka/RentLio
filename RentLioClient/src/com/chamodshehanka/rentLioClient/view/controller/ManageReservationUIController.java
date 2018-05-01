@@ -8,6 +8,7 @@ import com.chamodshehanka.rentLioCommon.dto.CustomerDTO;
 import com.chamodshehanka.rentLioCommon.dto.DriverDTO;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -52,12 +53,19 @@ public class ManageReservationUIController implements Initializable{
     @FXML
     private JFXButton btnDriverRemove;
 
+    @FXML
+    private JFXComboBox<String> cmbVehicleType;
+
+    @FXML
+    private JFXComboBox<String> cmbVehicleBrand;
+
     private List<CustomerDTO>  customerDTOList;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        generateReservationID();
         txtReservationID.setText("E001");
+        setUpUIComponents();
     }
 
     @FXML
@@ -145,6 +153,11 @@ public class ManageReservationUIController implements Initializable{
         txtCustomerID.setText("");
         txtCustomerName.setText("");
         txtCustomerID.requestFocus();
+    }
+
+    private void setUpUIComponents(){
+        cmbVehicleType.getItems().addAll("Family","Other");
+        cmbVehicleBrand.getItems().addAll("Toyota","Honda","Suzuki");
     }
 
     private void generateReservationID(){
