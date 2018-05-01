@@ -13,20 +13,18 @@
       <AnchorPane layoutX="38.0" layoutY="66.0" prefHeight="170.0" prefWidth="921.0" styleClass="container">
          <children>
             <AnchorPane prefHeight="10.0" prefWidth="950.0" styleClass="container-header" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <AnchorPane layoutY="160.0" prefHeight="10.0" prefWidth="921.0" styleClass="container-footer"
-                        AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+            <AnchorPane layoutY="160.0" prefHeight="10.0" prefWidth="921.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <JFXTextField fx:id="txtReservationID" focusColor="WHITE" labelFloat="true" layoutX="46.0" layoutY="69.0" prefHeight="28.0" prefWidth="80.0" promptText="Reservation ID" styleClass="text-field-white" unFocusColor="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </JFXTextField>
-            <JFXButton layoutX="90.0" layoutY="113.0" onAction="#findCustomerAction" prefHeight="25.0" prefWidth="90.0"
-                       styleClass="button-green" text="Search">
+            <JFXButton layoutX="107.0" layoutY="113.0" onAction="#findCustomerAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Search">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="624.0" layoutY="113.0" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Delete">
+            <JFXButton layoutX="219.0" layoutY="113.0" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Remove">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>
@@ -36,17 +34,36 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtCustomerName" focusColor="WHITE" labelFloat="true" layoutX="239.0" layoutY="69.0" onAction="#getCustomerByName" prefHeight="28.0" prefWidth="80.0" promptText="Customer ID" styleClass="text-field-white" unFocusColor="WHITE">
+            <JFXTextField fx:id="txtCustomerName" focusColor="WHITE" labelFloat="true" layoutX="239.0" layoutY="69.0" onAction="#getCustomerByName" prefHeight="28.0" prefWidth="80.0" promptText="Name" styleClass="text-field-white" unFocusColor="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </JFXTextField>
-            <JFXButton layoutX="194.0" layoutY="113.0" onAction="#viewCustomerAction" prefHeight="25.0"
-                       prefWidth="126.0" styleClass="button-green" text="View Customer">
+            <JFXCheckBox fx:id="chbxDriver" checkedColor="#2ecc71" layoutX="422.0" layoutY="28.0" onAction="#needDriverAction" text="Need Driver?" textFill="WHITE" unCheckedColor="WHITE">
                <font>
-                  <Font name="Calibri Bold" size="16.0"/>
+                  <Font name="Calibri Bold" size="15.0" />
                </font>
-            </JFXButton>
+            </JFXCheckBox>
+            <JFXTextField fx:id="txtDriverID" disable="true" focusColor="WHITE" labelFloat="true" layoutX="417.0" layoutY="69.0" onAction="#getDriverByID" prefHeight="28.0" prefWidth="80.0" promptText="Driver ID" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtDriverName" disable="true" focusColor="WHITE" labelFloat="true" layoutX="515.0" layoutY="69.0" prefHeight="28.0" prefWidth="80.0" promptText="Name" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtDriverTel" disable="true" focusColor="WHITE" labelFloat="true" layoutX="615.0" layoutY="69.0" prefHeight="28.0" prefWidth="99.0" promptText="Phone Number" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtDriverNIC" disable="true" focusColor="WHITE" labelFloat="true" layoutX="734.0" layoutY="69.0" prefHeight="28.0" prefWidth="80.0" promptText="Driver NIC" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
          </children>
       </AnchorPane>
    </children>

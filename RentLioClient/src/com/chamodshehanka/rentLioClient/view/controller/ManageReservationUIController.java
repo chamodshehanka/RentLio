@@ -1,9 +1,12 @@
 package com.chamodshehanka.rentLioClient.view.controller;
 
 import com.chamodshehanka.rentLioClient.controller.CustomerController;
+import com.chamodshehanka.rentLioClient.controller.DriverController;
 import com.chamodshehanka.rentLioClient.util.AlertBuilder;
 import com.chamodshehanka.rentLioClient.util.IDGenerator;
 import com.chamodshehanka.rentLioCommon.dto.CustomerDTO;
+import com.chamodshehanka.rentLioCommon.dto.DriverDTO;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,6 +30,21 @@ public class ManageReservationUIController implements Initializable{
     @FXML
     private JFXTextField txtCustomerName;
 
+    @FXML
+    private JFXTextField txtDriverID;
+
+    @FXML
+    private JFXCheckBox chbxDriver;
+
+    @FXML
+    private JFXTextField txtDriverName;
+
+    @FXML
+    private JFXTextField txtDriverTel;
+
+    @FXML
+    private JFXTextField txtDriverNIC;
+
     private List<CustomerDTO>  customerDTOList;
 
     @Override
@@ -36,8 +54,36 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
-    private void viewCustomerAction() {
-        System.out.println("Make View Customer Popup");
+    private void needDriverAction(){
+        if (chbxDriver.isSelected()){
+            txtDriverID.setDisable(false);
+            txtDriverName.setDisable(false);
+            txtDriverTel.setDisable(false);
+            txtDriverNIC.setDisable(false);
+
+        }else if (!chbxDriver.isSelected()){
+            txtDriverID.setDisable(true);
+            txtDriverName.setDisable(true);
+            txtDriverTel.setDisable(true);
+            txtDriverNIC.setDisable(true);
+        }
+    }
+
+    @FXML
+    private void getDriverByID(){
+        try {
+            DriverDTO driverDTO = DriverController.getDriverBy(txtDriverID.getText());
+            if (driverDTO != null){
+                txtDriverName.setText(driverDTO.getDriverName());
+                txtDriverTel.setText(0+String.valueOf(driverDTO.getTel()));
+                txtDriverNIC.setText(driverDTO.getDriverNIC());
+            }else {
+                new AlertBuilder("warn","Manage Driver","Driver Search",
+                        "Driver couldn't found");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
