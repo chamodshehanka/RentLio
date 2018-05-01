@@ -10,10 +10,10 @@
             <Font name="Calibri Bold" size="24.0" />
          </font>
       </Text>
-      <AnchorPane layoutX="38.0" layoutY="66.0" prefHeight="170.0" prefWidth="921.0" styleClass="container">
+      <AnchorPane layoutX="38.0" layoutY="66.0" prefHeight="170.0" prefWidth="925.0" styleClass="container">
          <children>
             <AnchorPane prefHeight="10.0" prefWidth="950.0" styleClass="container-header" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <AnchorPane layoutY="160.0" prefHeight="10.0" prefWidth="921.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <AnchorPane layoutY="162.0" prefHeight="8.0" prefWidth="921.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <JFXTextField fx:id="txtReservationID" focusColor="WHITE" labelFloat="true" layoutX="46.0" layoutY="69.0" prefHeight="28.0" prefWidth="80.0" promptText="Reservation ID" styleClass="text-field-white" unFocusColor="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
@@ -24,7 +24,7 @@
                   <Font name="Calibri Bold" size="16.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="219.0" layoutY="113.0" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Remove">
+            <JFXButton layoutX="219.0" layoutY="113.0" onAction="#removeCustomerAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Remove">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>
@@ -64,6 +64,21 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </JFXTextField>
+            <JFXButton fx:id="btnDriverSearch" disable="true" layoutX="530.0" layoutY="113.0" onAction="#getDriverByID" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Search">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnDriverRemove" disable="true" layoutX="642.0" layoutY="113.0" onAction="#removeDriverAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Remove">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="38.0" layoutY="239.0" prefHeight="370.0" prefWidth="925.0" styleClass="container">
+         <children>
+            <AnchorPane layoutX="1.0" layoutY="362.0" prefHeight="8.0" prefWidth="921.0" styleClass="container-footer" />
          </children>
       </AnchorPane>
    </children>

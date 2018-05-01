@@ -6,6 +6,7 @@ import com.chamodshehanka.rentLioClient.util.AlertBuilder;
 import com.chamodshehanka.rentLioClient.util.IDGenerator;
 import com.chamodshehanka.rentLioCommon.dto.CustomerDTO;
 import com.chamodshehanka.rentLioCommon.dto.DriverDTO;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -45,6 +46,12 @@ public class ManageReservationUIController implements Initializable{
     @FXML
     private JFXTextField txtDriverNIC;
 
+    @FXML
+    private JFXButton btnDriverSearch;
+
+    @FXML
+    private JFXButton btnDriverRemove;
+
     private List<CustomerDTO>  customerDTOList;
 
     @Override
@@ -60,12 +67,15 @@ public class ManageReservationUIController implements Initializable{
             txtDriverName.setDisable(false);
             txtDriverTel.setDisable(false);
             txtDriverNIC.setDisable(false);
-
+            btnDriverSearch.setDisable(false);
+            btnDriverRemove.setDisable(false);
         }else if (!chbxDriver.isSelected()){
             txtDriverID.setDisable(true);
             txtDriverName.setDisable(true);
             txtDriverTel.setDisable(true);
             txtDriverNIC.setDisable(true);
+            btnDriverSearch.setDisable(true);
+            btnDriverRemove.setDisable(true);
         }
     }
 
@@ -87,11 +97,24 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
+    private void removeDriverAction(){
+        txtDriverID.setText("");
+        txtDriverName.setText("");
+        txtDriverTel.setText("");
+        txtDriverNIC.setText("");
+        txtDriverID.requestFocus();
+    }
+
+    @FXML
     private void findCustomerAction(){
         try {
             CustomerDTO customerDTO = CustomerController.getCustomerById(txtCustomerID.getText());
             if (customerDTO != null){
                 txtCustomerName.setText(customerDTO.getCustomerName());
+                chbxDriver.requestFocus();
+            }else {
+                new AlertBuilder("warn","Customer","Customer Search",
+                        "Customer couldn't found");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -115,6 +138,13 @@ public class ManageReservationUIController implements Initializable{
                         "Customer couldn't found");
             }
         }
+    }
+
+    @FXML
+    private void removeCustomerAction(){
+        txtCustomerID.setText("");
+        txtCustomerName.setText("");
+        txtCustomerID.requestFocus();
     }
 
     private void generateReservationID(){
