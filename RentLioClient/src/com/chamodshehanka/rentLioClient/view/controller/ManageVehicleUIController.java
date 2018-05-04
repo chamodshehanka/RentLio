@@ -252,7 +252,6 @@ public class ManageVehicleUIController implements Initializable{
                 fileName = fileName.substring(24,fileName.length());
                 fileChooser.showSaveDialog(fileChooseStage);
                 setImgVehicle(fileName);
-                System.out.println();
             }else {
                 new AlertBuilder("error","Browse","Image",
                         "Reception couldn't delete !!");
