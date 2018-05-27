@@ -45,7 +45,7 @@ public class ProxyHandler implements ServicesFactory {
     }
 
     @Override
-    public SuperService getService(ServicesType servicesType) throws Exception {
+    public SuperService getService(ServicesType servicesType) {
         switch (servicesType){
             case ADMIN : return adminService;
             case VEHICLE: return vehicleService;
