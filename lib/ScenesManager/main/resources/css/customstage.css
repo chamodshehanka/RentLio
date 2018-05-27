@@ -1,0 +1,95 @@
+
+/*Root of the window*/
+/*do not override base properties to keep the styling functions of the CustomStage stable*/
+.base{
+    window-color: white;
+    button-color:window-color;
+    button-hover-color:lightgrey;
+    button-max-hover-color:button-hover-color;
+    button-close-hover-color:red;
+    -fx-border-color: window-color;
+    -fx-border-width: 1px;
+    -fx-background-color: window-color;  /*do not change value*/
+}
+
+
+/*A BorderPane and consists of navigationPane (left) and dynamicPane(center)*/
+#containerPane{
+    -fx-background-color: white;
+}
+
+/*The StackPane provided to change the scenes accordingly*/
+#dynamicPane{}
+
+/*The StackPane provided to place the navigation view*/
+.navigationPane{}
+
+.left-navigation{
+    -fx-effect: dropshadow(three-pass-box,grey,2,0.5,0.5,0.2);
+}
+
+.right-navigation{
+    -fx-effect: dropshadow(three-pass-box,grey,2,0.5,-0.5,0.2);
+}
+
+.top-navigation{
+    -fx-effect: dropshadow(three-pass-box,grey,2,0.5,0.2,0.5);
+}
+
+.bottom-navigation{
+    -fx-effect: dropshadow(three-pass-box,grey,2,0.5,0.2,-0.5);
+}
+
+/*Title-bar of the window*/
+#titleBar{
+    -fx-background-color: window-color;
+}
+
+/*Window title*/
+#lblTitle{
+    -fx-text-fill: black;
+}
+
+/*Action buttons of the window (close,maximize/restore,minimize)*/
+.action-button{
+    -fx-pref-height: 28px;
+    -fx-pref-width: 45px;
+    -fx-min-width: 45px;
+    -fx-min-height: 28px;
+    -fx-max-width: 45px;
+    -fx-max-height: 28px;
+    -fx-background-color: button-color;
+    -fx-background-radius: 0;
+}
+
+.action-button:hover{
+    -fx-background-color: button-hover-color;
+}
+
+/*Close button*/
+#btnClose{
+    -fx-graphic: url("/util/icons/close.png");
+}
+
+.btnClose{}
+
+.btnClose:hover{
+    -fx-background-color: button-close-hover-color;
+}
+
+.btnMax{}
+
+.btnMax:hover{
+    -fx-background-color: button-max-hover-color;
+}
+
+/*Minimize button*/
+#btnMin{
+    -fx-graphic: url("/util/icons/minimize.png");
+}
+
+/*Maximize/restore button*/
+#btnMax{
+    -fx-graphic: url("/util/icons/maximize.png");
+}
+
