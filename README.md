@@ -1,6 +1,6 @@
 # RentLio
 This is a vehicle reservation system. Which is made with JavaFX and also using hibernate and RMI. \
-And also moder UI and UX concepts and  [jfoenix](http://www.jfoenix.com/)
+And also moder UI and UX concepts and  [jfoenix](http://www.jfoenix.com/).
 
 [![official JetBrains project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![JetBrains Plugins](https://img.shields.io/jetbrains/plugin/v/9630-a8translate.svg)](https://plugins.jetbrains.com/)
