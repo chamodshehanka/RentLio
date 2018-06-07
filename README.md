@@ -1,3 +1,4 @@
+![Logo](https://github.com/Shehanka/RentLio/blob/master/RentLioClient/src/com/chamodshehanka/rentLioClient/view/images/rentlio-background.jpg)
 # RentLio
 This is a vehicle reservation system. Which is made with JavaFX and also using hibernate and RMI. \
 And also moder UI and UX concepts and  [jfoenix](http://www.jfoenix.com/).
