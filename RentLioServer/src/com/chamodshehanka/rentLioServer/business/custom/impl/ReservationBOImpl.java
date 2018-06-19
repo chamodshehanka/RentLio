@@ -259,7 +259,7 @@ public class ReservationBOImpl implements ReservationBO {
         try (Session session = HibernateUtil.getSessionFactory().openSession()){
             session.beginTransaction();
             reservationRepository.setSession(session);
-
+            session.getTransaction().commit();
             List<Reservation> reservationList = reservationRepository.findAll();
             session.getTransaction().commit();
 

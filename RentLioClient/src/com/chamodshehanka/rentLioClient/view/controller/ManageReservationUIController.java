@@ -63,7 +63,7 @@ public class ManageReservationUIController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        generateReservationID();
+        generateReservationID();
         txtReservationID.setText("E001");
         setUpUIComponents();
     }

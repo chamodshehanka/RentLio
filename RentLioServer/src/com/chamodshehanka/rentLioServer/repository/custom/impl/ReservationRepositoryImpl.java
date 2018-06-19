@@ -23,7 +23,7 @@ public class ReservationRepositoryImpl extends SuperRepositoryImpl<Reservation, 
 
     @Override
     public List findCustomerRepository(String customerId) {
-        List list = session.createQuery("from "+reservationClass.getSimpleName()+" where cid='" + customerId + "'").list();
+        List list = session.createQuery("from "+reservationClass.getSimpleName()+" where customerId='" + customerId + "'").list();
         if (list != null){
             return list;
         }else {
