@@ -14,6 +14,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -64,6 +65,12 @@ public class ManageReservationUIController implements Initializable{
 
     @FXML
     private JFXComboBox<String> cmbVehicleNo;
+
+    @FXML
+    private JFXTextField txtKMRs;
+
+    @FXML
+    private ImageView imgVehicle;
 
     private List<CustomerDTO>  customerDTOList;
 
@@ -211,4 +218,32 @@ public class ManageReservationUIController implements Initializable{
             }
         }
     }
+
+    @FXML
+    private void vehicleNumberSelectedAction(){
+
+        if (!cmbVehicleNo.getSelectionModel().isEmpty()){
+            String vehicleNo = cmbVehicleNo.getValue();
+
+            List<VehicleDTO> vehicleDTOList = null;
+
+            try {
+                vehicleDTOList = VehicleController.getAllVehicles();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            assert vehicleDTOList != null;
+            for (VehicleDTO vehicleDTO: vehicleDTOList
+                 ) {
+                if (vehicleDTO.getVehicleNumber().equals(vehicleNo)){
+                    txtKMRs.setText(String.valueOf(vehicleDTO.getKmrs()));
+                }
+            }
+        }else {
+            new AlertBuilder("warn","Vehicle","Vehicle No",
+                    "Select Vehicle No");
+        }
+    }
+
 }

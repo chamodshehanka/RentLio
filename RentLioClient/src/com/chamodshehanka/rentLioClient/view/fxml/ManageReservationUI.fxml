@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="625.0" prefWidth="1000.0" styleClass="root" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.ManageReservationUIController">
@@ -81,7 +82,18 @@
             <AnchorPane layoutX="1.0" layoutY="362.0" prefHeight="8.0" prefWidth="921.0" styleClass="container-footer" />
             <JFXComboBox fx:id="cmbVehicleType" focusColor="WHITE" labelFloat="true" layoutX="51.0" layoutY="37.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Type" styleClass="combo-box" unFocusColor="WHITE" />
             <JFXComboBox fx:id="cmbVehicleBrand" focusColor="WHITE" labelFloat="true" layoutX="184.0" layoutY="37.0" onAction="#filterVehicleNoAction" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Brand" unFocusColor="WHITE" />
-            <JFXComboBox fx:id="cmbVehicleNo" focusColor="WHITE" labelFloat="true" layoutX="308.0" layoutY="37.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle No" unFocusColor="WHITE" />
+            <JFXComboBox fx:id="cmbVehicleNo" focusColor="WHITE" labelFloat="true" layoutX="308.0" layoutY="37.0" onAction="#vehicleNumberSelectedAction" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle No" unFocusColor="WHITE" />
+            <JFXButton layoutX="308.0" layoutY="71.0" onAction="#vehicleNumberSelectedAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Search">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="txtKMRs" focusColor="WHITE" labelFloat="true" layoutX="434.0" layoutY="34.0" prefHeight="28.0" prefWidth="100.0" promptText="Price per 1 Km" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fx:id="imgVehicle" fitHeight="140.0" fitWidth="255.0" layoutX="599.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>
