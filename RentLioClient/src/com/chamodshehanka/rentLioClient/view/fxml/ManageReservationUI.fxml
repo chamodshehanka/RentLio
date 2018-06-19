@@ -14,7 +14,7 @@
          <children>
             <AnchorPane prefHeight="10.0" prefWidth="950.0" styleClass="container-header" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <AnchorPane layoutY="162.0" prefHeight="8.0" prefWidth="921.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            <JFXTextField fx:id="txtReservationID" focusColor="WHITE" labelFloat="true" layoutX="46.0" layoutY="69.0" prefHeight="28.0" prefWidth="80.0" promptText="Reservation ID" styleClass="text-field-white" unFocusColor="WHITE">
+            <JFXTextField fx:id="txtReservationID" focusColor="WHITE" labelFloat="true" layoutX="46.0" layoutY="69.0" prefHeight="28.0" prefWidth="103.0" promptText="Reservation ID" styleClass="text-field-white" unFocusColor="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
@@ -29,12 +29,12 @@
                   <Font name="Calibri Bold" size="16.0" />
                </font>
             </JFXButton>
-            <JFXTextField fx:id="txtCustomerID" focusColor="WHITE" labelFloat="true" layoutX="147.0" layoutY="69.0" onAction="#findCustomerAction" prefHeight="28.0" prefWidth="80.0" promptText="Customer ID" styleClass="text-field-white" unFocusColor="WHITE">
+            <JFXTextField fx:id="txtCustomerID" focusColor="WHITE" labelFloat="true" layoutX="168.0" layoutY="69.0" onAction="#findCustomerAction" prefHeight="28.0" prefWidth="80.0" promptText="Customer ID" styleClass="text-field-white" unFocusColor="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtCustomerName" focusColor="WHITE" labelFloat="true" layoutX="239.0" layoutY="69.0" onAction="#getCustomerByName" prefHeight="28.0" prefWidth="80.0" promptText="Name" styleClass="text-field-white" unFocusColor="WHITE">
+            <JFXTextField fx:id="txtCustomerName" focusColor="WHITE" labelFloat="true" layoutX="260.0" layoutY="69.0" onAction="#getCustomerByName" prefHeight="28.0" prefWidth="80.0" promptText="Name" styleClass="text-field-white" unFocusColor="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>
@@ -81,6 +81,7 @@
             <AnchorPane layoutX="1.0" layoutY="362.0" prefHeight="8.0" prefWidth="921.0" styleClass="container-footer" />
             <JFXComboBox fx:id="cmbVehicleType" focusColor="WHITE" labelFloat="true" layoutX="51.0" layoutY="37.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Type" styleClass="combo-box" unFocusColor="WHITE" />
             <JFXComboBox fx:id="cmbVehicleBrand" focusColor="WHITE" labelFloat="true" layoutX="184.0" layoutY="37.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Brand" unFocusColor="WHITE" />
+            <JFXComboBox fx:id="cmbVehicleNo" focusColor="WHITE" labelFloat="true" layoutX="308.0" layoutY="37.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle No" unFocusColor="WHITE" />
          </children>
       </AnchorPane>
    </children>

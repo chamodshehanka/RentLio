@@ -59,6 +59,9 @@ public class ManageReservationUIController implements Initializable{
     @FXML
     private JFXComboBox<String> cmbVehicleBrand;
 
+    @FXML
+    private JFXComboBox<String> cmbVehicleNo;
+
     private List<CustomerDTO>  customerDTOList;
 
     @Override
