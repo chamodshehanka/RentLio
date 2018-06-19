@@ -177,33 +177,38 @@ public class ManageReservationUIController implements Initializable{
     @FXML
     private void filterVehicleNoAction(){
 
-        String vehicleType = cmbVehicleType.getValue();
-        String vehicleBrand = cmbVehicleBrand.getValue();
-        List<VehicleDTO> vehicleDTOArrayList = null;
+        if(cmbVehicleType.getSelectionModel().isEmpty()){
+            new AlertBuilder("warn","Vehicle","Vehicle Type",
+                    "Select Vehicle Type");
+        }else {
+            String vehicleType = cmbVehicleType.getValue();
+            String vehicleBrand = cmbVehicleBrand.getValue();
+            List<VehicleDTO> vehicleDTOArrayList = null;
 
-        try {
-            vehicleDTOArrayList = VehicleController.getAllVehicles();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            try {
+                vehicleDTOArrayList = VehicleController.getAllVehicles();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-        ArrayList<String> filteredVehicleList = new ArrayList<>();
+            ArrayList<String> filteredVehicleList = new ArrayList<>();
 
-        assert vehicleDTOArrayList != null;
-        for (VehicleDTO vehicleDTO: vehicleDTOArrayList
-             ) {
+            assert vehicleDTOArrayList != null;
+            for (VehicleDTO vehicleDTO: vehicleDTOArrayList
+                    ) {
                 if (vehicleDTO.getVehicleType().equals(vehicleType) && vehicleDTO.getVehicleBrand().equals(vehicleBrand)){
                     filteredVehicleList.add(vehicleDTO.getVehicleNumber());
                 }else {
                     filteredVehicleList = null;
                 }
-        }
+            }
 
-        if (filteredVehicleList != null){
-            cmbVehicleNo.getItems().addAll(String.valueOf(filteredVehicleList));
-        }else{
-            new AlertBuilder("error","Vehicle","Vehicle Search",
-                    "No that this type of vehicles");
+            if (filteredVehicleList != null){
+                cmbVehicleNo.getItems().addAll(String.valueOf(filteredVehicleList));
+            }else{
+                new AlertBuilder("error","Vehicle","Vehicle Search",
+                        "No that this type of vehicles");
+            }
         }
     }
 }
