@@ -8,10 +8,7 @@ import com.chamodshehanka.rentLioClient.util.IDGenerator;
 import com.chamodshehanka.rentLioCommon.dto.CustomerDTO;
 import com.chamodshehanka.rentLioCommon.dto.DriverDTO;
 import com.chamodshehanka.rentLioCommon.dto.VehicleDTO;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -71,6 +68,9 @@ public class ManageReservationUIController implements Initializable{
 
     @FXML
     private ImageView imgVehicle;
+
+    @FXML
+    private JFXDatePicker dpkPickUpDate;
 
     private List<CustomerDTO>  customerDTOList;
 
@@ -245,6 +245,11 @@ public class ManageReservationUIController implements Initializable{
             new AlertBuilder("warn","Vehicle","Vehicle No",
                     "Select Vehicle No");
         }
+    }
+
+    @FXML
+    private void checkDate(){
+
     }
 
 }
