@@ -223,7 +223,8 @@ public class ManageReservationUIController implements Initializable{
     private void vehicleNumberSelectedAction(){
 
         if (!cmbVehicleNo.getSelectionModel().isEmpty()){
-            String vehicleNo = cmbVehicleNo.getValue();
+
+            String vehicleNo = cmbVehicleNo.getValue().substring(1, cmbVehicleNo.getValue().length()-1);
 
             List<VehicleDTO> vehicleDTOList = null;
 
