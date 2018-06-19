@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -248,8 +249,9 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
-    private void checkDate(){
-
+    private void checkDateAction(){
+        LocalDate localDate = dpkPickUpDate.getValue();
+        System.out.println(localDate);
     }
 
 }
