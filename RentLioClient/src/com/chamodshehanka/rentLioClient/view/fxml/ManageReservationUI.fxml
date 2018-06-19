@@ -80,7 +80,7 @@
          <children>
             <AnchorPane layoutX="1.0" layoutY="362.0" prefHeight="8.0" prefWidth="921.0" styleClass="container-footer" />
             <JFXComboBox fx:id="cmbVehicleType" focusColor="WHITE" labelFloat="true" layoutX="51.0" layoutY="37.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Type" styleClass="combo-box" unFocusColor="WHITE" />
-            <JFXComboBox fx:id="cmbVehicleBrand" focusColor="WHITE" labelFloat="true" layoutX="184.0" layoutY="37.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Brand" unFocusColor="WHITE" />
+            <JFXComboBox fx:id="cmbVehicleBrand" focusColor="WHITE" labelFloat="true" layoutX="184.0" layoutY="37.0" onAction="#filterVehicleNoAction" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Brand" unFocusColor="WHITE" />
             <JFXComboBox fx:id="cmbVehicleNo" focusColor="WHITE" labelFloat="true" layoutX="308.0" layoutY="37.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle No" unFocusColor="WHITE" />
          </children>
       </AnchorPane>

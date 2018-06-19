@@ -2,10 +2,12 @@ package com.chamodshehanka.rentLioClient.view.controller;
 
 import com.chamodshehanka.rentLioClient.controller.CustomerController;
 import com.chamodshehanka.rentLioClient.controller.DriverController;
+import com.chamodshehanka.rentLioClient.controller.VehicleController;
 import com.chamodshehanka.rentLioClient.util.AlertBuilder;
 import com.chamodshehanka.rentLioClient.util.IDGenerator;
 import com.chamodshehanka.rentLioCommon.dto.CustomerDTO;
 import com.chamodshehanka.rentLioCommon.dto.DriverDTO;
+import com.chamodshehanka.rentLioCommon.dto.VehicleDTO;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
@@ -14,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -66,7 +69,7 @@ public class ManageReservationUIController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        generateReservationID();
+//        generateReservationID();
         txtReservationID.setText("E001");
         setUpUIComponents();
     }
@@ -168,6 +171,39 @@ public class ManageReservationUIController implements Initializable{
             txtReservationID.setText(IDGenerator.getNewID("reservation","E"));
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void filterVehicleNoAction(){
+
+        String vehicleType = cmbVehicleType.getValue();
+        String vehicleBrand = cmbVehicleBrand.getValue();
+        List<VehicleDTO> vehicleDTOArrayList = null;
+
+        try {
+            vehicleDTOArrayList = VehicleController.getAllVehicles();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<String> filteredVehicleList = new ArrayList<>();
+
+        assert vehicleDTOArrayList != null;
+        for (VehicleDTO vehicleDTO: vehicleDTOArrayList
+             ) {
+                if (vehicleDTO.getVehicleType().equals(vehicleType) && vehicleDTO.getVehicleBrand().equals(vehicleBrand)){
+                    filteredVehicleList.add(vehicleDTO.getVehicleNumber());
+                }else {
+                    filteredVehicleList = null;
+                }
+        }
+
+        if (filteredVehicleList != null){
+            cmbVehicleNo.getItems().addAll(String.valueOf(filteredVehicleList));
+        }else{
+            new AlertBuilder("error","Vehicle","Vehicle Search",
+                    "No that this type of vehicles");
         }
     }
 }
