@@ -23,7 +23,7 @@ public class AdminObservable {
         return adminObservers.remove(adminObserver);
     }
 
-    public void loginAdmin()throws Exception{
+    private void loginAdmin()throws Exception{
         for (AdminObserver adminObserver: adminObservers
              ) {
             new Thread(() -> {
@@ -36,7 +36,7 @@ public class AdminObservable {
         }
     }
 
-    public void logOutAdmin()throws Exception{
+    private void logOutAdmin()throws Exception{
         for (AdminObserver adminObserver: adminObservers
              ) {
             new Thread(() -> {
