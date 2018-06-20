@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -251,7 +252,7 @@ public class ManageReservationUIController implements Initializable{
     @FXML
     private void checkDateAction(){
         LocalDate localDate = dpkPickUpDate.getValue();
-        System.out.println(localDate);
+        ChronoUnit.DAYS.between(localDate,localDate);
     }
 
 }
