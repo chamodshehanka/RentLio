@@ -116,7 +116,7 @@
                   <Font name="Calibri Bold" size="16.0" />
                </font>
             </JFXButton>
-            <JFXCheckBox fx:id="chbxGetVehicleNow" checkedColor="#2ecc71" layoutX="39.0" layoutY="176.0" text="Get Vehicle Now" textFill="WHITE" unCheckedColor="WHITE">
+            <JFXCheckBox fx:id="chbxGetVehicleNow" checkedColor="#2ecc71" layoutX="39.0" layoutY="176.0" onAction="#getVehicleNowAction" text="Get Vehicle Now" textFill="WHITE" unCheckedColor="WHITE">
                <font>
                   <Font name="Calibri Bold" size="15.0" />
                </font>

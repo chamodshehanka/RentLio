@@ -2,11 +2,13 @@ package com.chamodshehanka.rentLioClient.view.controller;
 
 import com.chamodshehanka.rentLioClient.controller.CustomerController;
 import com.chamodshehanka.rentLioClient.controller.DriverController;
+import com.chamodshehanka.rentLioClient.controller.ReservationController;
 import com.chamodshehanka.rentLioClient.controller.VehicleController;
 import com.chamodshehanka.rentLioClient.util.AlertBuilder;
 import com.chamodshehanka.rentLioClient.util.IDGenerator;
 import com.chamodshehanka.rentLioCommon.dto.CustomerDTO;
 import com.chamodshehanka.rentLioCommon.dto.DriverDTO;
+import com.chamodshehanka.rentLioCommon.dto.ReservationDTO;
 import com.chamodshehanka.rentLioCommon.dto.VehicleDTO;
 import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
@@ -91,6 +93,8 @@ public class ManageReservationUIController implements Initializable{
     private JFXCheckBox chbxGetVehicleNow;
 
     private List<CustomerDTO>  customerDTOList;
+
+    private boolean isVehicleNow;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -293,13 +297,29 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
+    private void getVehicleNowAction(){
+        isVehicleNow = chbxGetVehicleNow.isSelected();
+    }
+
+    @FXML
     private void confirmReservationAction(){
+
+        String vehicleStatus;
+
+        ReservationDTO reservationDTO = null;
+        VehicleDTO vehicleDTO = null;
+        DriverDTO driverDTO = null;
+
+        try {
+            boolean isReservationAdded = ReservationController.addReservation(reservationDTO, vehicleDTO, driverDTO);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
     @FXML
     private void cancelReservationAction(){
-
     }
 
 }
