@@ -11,6 +11,7 @@ import com.chamodshehanka.rentLioCommon.dto.VehicleDTO;
 import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
@@ -185,6 +186,12 @@ public class ManageReservationUIController implements Initializable{
     private void setUpUIComponents(){
         cmbVehicleType.getItems().addAll("Family","Other");
         cmbVehicleBrand.getItems().addAll("Toyota","Honda","Suzuki");
+
+        setVehicleDefaultImage();
+    }
+
+    private void setVehicleDefaultImage(){
+        imgVehicle.setImage(new Image("/com/chamodshehanka/rentLioClient/view/images/notAvailable.png"));
     }
 
     private void generateReservationID(){
