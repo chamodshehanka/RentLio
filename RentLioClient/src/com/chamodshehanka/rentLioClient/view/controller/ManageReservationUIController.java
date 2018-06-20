@@ -87,6 +87,9 @@ public class ManageReservationUIController implements Initializable{
     @FXML
     private JFXTextArea txtComment;
 
+    @FXML
+    private JFXCheckBox chbxGetVehicleNow;
+
     private List<CustomerDTO>  customerDTOList;
 
     @Override
@@ -281,6 +284,22 @@ public class ManageReservationUIController implements Initializable{
     private void checkDateAction(){
         LocalDate localDate = dpkPickUpDate.getValue();
         ChronoUnit.DAYS.between(localDate,localDate);
+    }
+
+    @FXML
+    private void removeVehicleSearchAction(){
+        txtPriceForDay.setText("");
+        txtKMRs.setText("");
+    }
+
+    @FXML
+    private void confirmReservationAction(){
+
+    }
+
+    @FXML
+    private void cancelReservationAction(){
+
     }
 
 }

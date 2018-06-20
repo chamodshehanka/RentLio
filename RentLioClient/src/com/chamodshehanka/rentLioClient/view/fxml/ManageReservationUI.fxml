@@ -83,7 +83,7 @@
             <JFXComboBox fx:id="cmbVehicleType" focusColor="WHITE" labelFloat="true" layoutX="51.0" layoutY="37.0" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Type" styleClass="combo-box" unFocusColor="WHITE" />
             <JFXComboBox fx:id="cmbVehicleBrand" focusColor="WHITE" labelFloat="true" layoutX="184.0" layoutY="37.0" onAction="#filterVehicleNoAction" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle Brand" unFocusColor="WHITE" />
             <JFXComboBox fx:id="cmbVehicleNo" focusColor="WHITE" labelFloat="true" layoutX="308.0" layoutY="37.0" onAction="#vehicleNumberSelectedAction" prefHeight="25.0" prefWidth="105.0" promptText="Vehicle No" unFocusColor="WHITE" />
-            <JFXButton layoutX="308.0" layoutY="71.0" onAction="#vehicleNumberSelectedAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Search">
+            <JFXButton layoutX="110.0" layoutY="71.0" onAction="#vehicleNumberSelectedAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Search">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>
@@ -111,6 +111,26 @@
                </font>
             </JFXTextField>
             <JFXTextArea fx:id="txtComment" focusColor="WHITE" labelFloat="true" layoutX="38.0" layoutY="213.0" prefHeight="79.0" prefWidth="853.0" promptText="Comment" styleClass="text-field-white" unFocusColor="WHITE" />
+            <JFXButton layoutX="219.0" layoutY="71.0" onAction="#removeVehicleSearchAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Remove">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXCheckBox fx:id="chbxGetVehicleNow" checkedColor="#2ecc71" layoutX="39.0" layoutY="176.0" text="Get Vehicle Now" textFill="WHITE" unCheckedColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXButton layoutX="754.0" layoutY="310.0" onAction="#confirmReservationAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Confirm">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="646.0" layoutY="310.0" onAction="#cancelReservationAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Remove">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>
