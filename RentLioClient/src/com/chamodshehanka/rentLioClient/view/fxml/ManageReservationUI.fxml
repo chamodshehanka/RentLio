@@ -93,7 +93,7 @@
                   <Font name="Calibri Bold" size="15.0" />
                </font>
             </JFXTextField>
-            <ImageView fx:id="imgVehicle" fitHeight="140.0" fitWidth="255.0" layoutX="599.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgVehicle" fitHeight="160.0" fitWidth="255.0" layoutX="599.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
             <JFXDatePicker fx:id="dpkPickUpDate" defaultColor="#2ecc71" layoutX="38.0" layoutY="124.0" onAction="#checkDateAction" promptText="Pick  Up Date" />
             <JFXTextField fx:id="txtNowMeter" focusColor="WHITE" labelFloat="true" layoutX="223.0" layoutY="124.0" prefHeight="28.0" prefWidth="80.0" promptText="Now Meter" styleClass="text-field-white" unFocusColor="WHITE">
                <font>

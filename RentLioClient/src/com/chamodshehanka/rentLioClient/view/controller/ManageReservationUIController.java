@@ -194,6 +194,14 @@ public class ManageReservationUIController implements Initializable{
         imgVehicle.setImage(new Image("/com/chamodshehanka/rentLioClient/view/images/notAvailable.png"));
     }
 
+    private void setImgVehicle(String imgName){
+        if (imgName != null){
+            imgVehicle.setImage(new Image("/com/chamodshehanka/rentLioClient/view/images/"+imgName+".jpg"));
+        }else{
+            setVehicleDefaultImage();
+        }
+    }
+
     private void generateReservationID(){
         try {
             txtReservationID.setText(IDGenerator.getNewID("reservation","E"));
@@ -260,6 +268,7 @@ public class ManageReservationUIController implements Initializable{
                  ) {
                 if (vehicleDTO.getVehicleNumber().equals(vehicleNo)){
                     txtKMRs.setText(String.valueOf(vehicleDTO.getKmrs()));
+                    setImgVehicle(vehicleDTO.getImageURL());
                 }
             }
         }else {
