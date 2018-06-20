@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
  * @author chamodshehanka on 4/30/2018
  * @project RentLio
  **/
-public class ManageReservationUIController implements Initializable{
+public class ManageReservationUIController implements Initializable {
 
     @FXML
     private JFXTextField txtReservationID;
@@ -92,27 +92,29 @@ public class ManageReservationUIController implements Initializable{
     @FXML
     private JFXCheckBox chbxGetVehicleNow;
 
-    private List<CustomerDTO>  customerDTOList;
+    private List<CustomerDTO> customerDTOList;
 
     private boolean isVehicleNow;
+    private String receptionID;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        generateReservationID();
         txtReservationID.setText("E001");
         setUpUIComponents();
+        receptionID = "R001";
     }
 
     @FXML
-    private void needDriverAction(){
-        if (chbxDriver.isSelected()){
+    private void needDriverAction() {
+        if (chbxDriver.isSelected()) {
             txtDriverID.setDisable(false);
             txtDriverName.setDisable(false);
             txtDriverTel.setDisable(false);
             txtDriverNIC.setDisable(false);
             btnDriverSearch.setDisable(false);
             btnDriverRemove.setDisable(false);
-        }else if (!chbxDriver.isSelected()){
+        } else if (!chbxDriver.isSelected()) {
             txtDriverID.setDisable(true);
             txtDriverName.setDisable(true);
             txtDriverTel.setDisable(true);
@@ -123,15 +125,15 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
-    private void getDriverByID(){
+    private void getDriverByID() {
         try {
             DriverDTO driverDTO = DriverController.getDriverBy(txtDriverID.getText());
-            if (driverDTO != null){
+            if (driverDTO != null) {
                 txtDriverName.setText(driverDTO.getDriverName());
-                txtDriverTel.setText(0+String.valueOf(driverDTO.getTel()));
+                txtDriverTel.setText(0 + String.valueOf(driverDTO.getTel()));
                 txtDriverNIC.setText(driverDTO.getDriverNIC());
-            }else {
-                new AlertBuilder("warn","Manage Driver","Driver Search",
+            } else {
+                new AlertBuilder("warn", "Manage Driver", "Driver Search",
                         "Driver couldn't found");
             }
         } catch (Exception e) {
@@ -140,7 +142,7 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
-    private void removeDriverAction(){
+    private void removeDriverAction() {
         txtDriverID.setText("");
         txtDriverName.setText("");
         txtDriverTel.setText("");
@@ -149,14 +151,14 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
-    private void findCustomerAction(){
+    private void findCustomerAction() {
         try {
             CustomerDTO customerDTO = CustomerController.getCustomerById(txtCustomerID.getText());
-            if (customerDTO != null){
+            if (customerDTO != null) {
                 txtCustomerName.setText(customerDTO.getCustomerName());
                 chbxDriver.requestFocus();
-            }else {
-                new AlertBuilder("warn","Customer","Customer Search",
+            } else {
+                new AlertBuilder("warn", "Customer", "Customer Search",
                         "Customer couldn't found");
             }
         } catch (Exception e) {
@@ -165,7 +167,7 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
-    private void getCustomerByName(){
+    private void getCustomerByName() {
         try {
             customerDTOList = CustomerController.getAllCustomers();
         } catch (Exception e) {
@@ -173,57 +175,57 @@ public class ManageReservationUIController implements Initializable{
         }
         String customerName = txtCustomerName.getText();
         for (CustomerDTO customerDTO : customerDTOList
-             ) {
-            if (customerDTO.getCustomerName().equals(customerName)){
+                ) {
+            if (customerDTO.getCustomerName().equals(customerName)) {
                 txtCustomerID.setText(customerDTO.getCustomerId());
-            }else {
-                new AlertBuilder("warn","Customer","Customer Search",
+            } else {
+                new AlertBuilder("warn", "Customer", "Customer Search",
                         "Customer couldn't found");
             }
         }
     }
 
     @FXML
-    private void removeCustomerAction(){
+    private void removeCustomerAction() {
         txtCustomerID.setText("");
         txtCustomerName.setText("");
         txtCustomerID.requestFocus();
     }
 
-    private void setUpUIComponents(){
-        cmbVehicleType.getItems().addAll("Family","Other");
-        cmbVehicleBrand.getItems().addAll("Toyota","Honda","Suzuki");
+    private void setUpUIComponents() {
+        cmbVehicleType.getItems().addAll("Family", "Other");
+        cmbVehicleBrand.getItems().addAll("Toyota", "Honda", "Suzuki");
 
         setVehicleDefaultImage();
     }
 
-    private void setVehicleDefaultImage(){
+    private void setVehicleDefaultImage() {
         imgVehicle.setImage(new Image("/com/chamodshehanka/rentLioClient/view/images/notAvailable.png"));
     }
 
-    private void setImgVehicle(String imgName){
-        if (imgName != null){
-            imgVehicle.setImage(new Image("/com/chamodshehanka/rentLioClient/view/images/"+imgName+".jpg"));
-        }else{
+    private void setImgVehicle(String imgName) {
+        if (imgName != null) {
+            imgVehicle.setImage(new Image("/com/chamodshehanka/rentLioClient/view/images/" + imgName + ".jpg"));
+        } else {
             setVehicleDefaultImage();
         }
     }
 
-    private void generateReservationID(){
+    private void generateReservationID() {
         try {
-            txtReservationID.setText(IDGenerator.getNewID("reservation","E"));
+            txtReservationID.setText(IDGenerator.getNewID("reservation", "E"));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @FXML
-    private void filterVehicleNoAction(){
+    private void filterVehicleNoAction() {
 
-        if(cmbVehicleType.getSelectionModel().isEmpty()){
-            new AlertBuilder("warn","Vehicle","Vehicle Type",
+        if (cmbVehicleType.getSelectionModel().isEmpty()) {
+            new AlertBuilder("warn", "Vehicle", "Vehicle Type",
                     "Select Vehicle Type");
-        }else {
+        } else {
             String vehicleType = cmbVehicleType.getValue();
             String vehicleBrand = cmbVehicleBrand.getValue();
             List<VehicleDTO> vehicleDTOArrayList = null;
@@ -237,30 +239,30 @@ public class ManageReservationUIController implements Initializable{
             ArrayList<String> filteredVehicleList = new ArrayList<>();
 
             assert vehicleDTOArrayList != null;
-            for (VehicleDTO vehicleDTO: vehicleDTOArrayList
+            for (VehicleDTO vehicleDTO : vehicleDTOArrayList
                     ) {
-                if (vehicleDTO.getVehicleType().equals(vehicleType) && vehicleDTO.getVehicleBrand().equals(vehicleBrand)){
+                if (vehicleDTO.getVehicleType().equals(vehicleType) && vehicleDTO.getVehicleBrand().equals(vehicleBrand)) {
                     filteredVehicleList.add(vehicleDTO.getVehicleNumber());
-                }else {
+                } else {
                     filteredVehicleList = null;
                 }
             }
 
-            if (filteredVehicleList != null){
+            if (filteredVehicleList != null) {
                 cmbVehicleNo.getItems().addAll(String.valueOf(filteredVehicleList));
-            }else{
-                new AlertBuilder("error","Vehicle","Vehicle Search",
+            } else {
+                new AlertBuilder("error", "Vehicle", "Vehicle Search",
                         "No that this type of vehicles");
             }
         }
     }
 
     @FXML
-    private void vehicleNumberSelectedAction(){
+    private void vehicleNumberSelectedAction() {
 
-        if (!cmbVehicleNo.getSelectionModel().isEmpty()){
+        if (!cmbVehicleNo.getSelectionModel().isEmpty()) {
 
-            String vehicleNo = cmbVehicleNo.getValue().substring(1, cmbVehicleNo.getValue().length()-1);
+            String vehicleNo = cmbVehicleNo.getValue().substring(1, cmbVehicleNo.getValue().length() - 1);
 
             List<VehicleDTO> vehicleDTOList = null;
 
@@ -271,47 +273,108 @@ public class ManageReservationUIController implements Initializable{
             }
 
             assert vehicleDTOList != null;
-            for (VehicleDTO vehicleDTO: vehicleDTOList
-                 ) {
-                if (vehicleDTO.getVehicleNumber().equals(vehicleNo)){
+            for (VehicleDTO vehicleDTO : vehicleDTOList
+                    ) {
+                if (vehicleDTO.getVehicleNumber().equals(vehicleNo)) {
                     txtKMRs.setText(String.valueOf(vehicleDTO.getKmrs()));
                     setImgVehicle(vehicleDTO.getImageURL());
                 }
             }
-        }else {
-            new AlertBuilder("warn","Vehicle","Vehicle No",
+        } else {
+            new AlertBuilder("warn", "Vehicle", "Vehicle No",
                     "Select Vehicle No");
         }
     }
 
     @FXML
-    private void checkDateAction(){
+    private void checkDateAction() {
         LocalDate localDate = dpkPickUpDate.getValue();
-        ChronoUnit.DAYS.between(localDate,localDate);
+        ChronoUnit.DAYS.between(localDate, localDate);
     }
 
     @FXML
-    private void removeVehicleSearchAction(){
+    private void removeVehicleSearchAction() {
         txtPriceForDay.setText("");
         txtKMRs.setText("");
     }
 
     @FXML
-    private void getVehicleNowAction(){
+    private void getVehicleNowAction() {
         isVehicleNow = chbxGetVehicleNow.isSelected();
     }
 
     @FXML
-    private void confirmReservationAction(){
+    private void confirmReservationAction() {
 
         String vehicleStatus;
+        if (isVehicleNow) {
+            vehicleStatus = "Reserved";
+        } else {
+            vehicleStatus = "Available";
+        }
 
-        ReservationDTO reservationDTO = null;
+        //Load Customer Object
+        CustomerDTO customerDTO = null;
+        try {
+            customerDTO = CustomerController.getCustomerById(txtCustomerID.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //Load Vehicle Object
         VehicleDTO vehicleDTO = null;
+        try {
+            vehicleDTO = VehicleController.getVehicleById(cmbVehicleNo.getValue());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //Load Driver Object
         DriverDTO driverDTO = null;
+        try {
+            driverDTO = DriverController.getDriverBy(txtDriverID.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        assert customerDTO != null;
+        assert vehicleDTO != null;
+        ReservationDTO reservationDTO = new ReservationDTO(
+                txtReservationID.getText(),
+                receptionID,
+                txtCustomerID.getText(),
+                txtCustomerName.getText(),
+                customerDTO.getTel(),
+                customerDTO.getCustomerNIC(),
+
+                txtDriverID.getText(),
+                txtDriverName.getText(),
+                txtDriverTel.getText(),
+                txtDriverNIC.getText(),
+
+                cmbVehicleNo.getValue(),
+                cmbVehicleType.getValue(),
+                cmbVehicleBrand.getValue(),
+                txtKMRs.getText(),
+                vehicleDTO.getImageURL(),
+
+                String.valueOf(dpkPickUpDate.getValue()),
+                txtNowMeter.getText(),
+                vehicleStatus,
+                txtComment.getText(),
+                Double.valueOf(String.valueOf(dpkPickUpDate.getValue())),
+                Double.valueOf(txtPriceForDay.getText())
+        );
 
         try {
-            boolean isReservationAdded = ReservationController.addReservation(reservationDTO, vehicleDTO, driverDTO);
+            boolean isReservationAdded = ReservationController.addReservation(reservationDTO,vehicleDTO,driverDTO);
+            if (isReservationAdded){
+                new AlertBuilder("info", "Manage Reservation", "Reservation Added",
+                        "Reservation Confirmed Successfully");
+            }else {
+                new AlertBuilder("error", "Manage Reservation", "Reservation Text",
+                        "Driver couldn't found");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -319,7 +382,7 @@ public class ManageReservationUIController implements Initializable{
     }
 
     @FXML
-    private void cancelReservationAction(){
+    private void cancelReservationAction() {
     }
 
 }
