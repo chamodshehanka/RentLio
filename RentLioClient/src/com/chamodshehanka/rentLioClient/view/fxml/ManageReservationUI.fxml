@@ -95,6 +95,22 @@
             </JFXTextField>
             <ImageView fx:id="imgVehicle" fitHeight="140.0" fitWidth="255.0" layoutX="599.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
             <JFXDatePicker fx:id="dpkPickUpDate" defaultColor="#2ecc71" layoutX="38.0" layoutY="124.0" onAction="#checkDateAction" promptText="Pick  Up Date" />
+            <JFXTextField fx:id="txtNowMeter" focusColor="WHITE" labelFloat="true" layoutX="223.0" layoutY="124.0" prefHeight="28.0" prefWidth="80.0" promptText="Now Meter" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtDeposit" focusColor="WHITE" labelFloat="true" layoutX="321.0" layoutY="124.0" prefHeight="28.0" prefWidth="80.0" promptText="Deposit" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtPriceForDay" focusColor="WHITE" labelFloat="true" layoutX="424.0" layoutY="124.0" prefHeight="28.0" prefWidth="90.0" promptText="Price For Day" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextArea fx:id="txtComment" focusColor="WHITE" labelFloat="true" layoutX="38.0" layoutY="213.0" prefHeight="79.0" prefWidth="853.0" promptText="Comment" styleClass="text-field-white" unFocusColor="WHITE" />
          </children>
       </AnchorPane>
    </children>

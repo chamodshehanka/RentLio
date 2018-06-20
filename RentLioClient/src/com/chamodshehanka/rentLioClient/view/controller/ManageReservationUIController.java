@@ -74,6 +74,18 @@ public class ManageReservationUIController implements Initializable{
     @FXML
     private JFXDatePicker dpkPickUpDate;
 
+    @FXML
+    private JFXTextField txtNowMeter;
+
+    @FXML
+    private JFXTextField txtDeposit;
+
+    @FXML
+    private JFXTextField txtPriceForDay;
+
+    @FXML
+    private JFXTextArea txtComment;
+
     private List<CustomerDTO>  customerDTOList;
 
     @Override
