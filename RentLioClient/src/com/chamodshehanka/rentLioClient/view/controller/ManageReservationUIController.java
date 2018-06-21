@@ -320,11 +320,12 @@ public class ManageReservationUIController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        System.out.println(cmbVehicleNo.getValue().substring(1, cmbVehicleNo.getValue().length() - 1));
         //Load Vehicle Object
         VehicleDTO vehicleDTO = null;
         try {
-            vehicleDTO = VehicleController.getVehicleById(cmbVehicleNo.getValue());
+            vehicleDTO = VehicleController
+                    .getVehicleById(cmbVehicleNo.getValue().substring(1, cmbVehicleNo.getValue().length() - 1));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -362,7 +363,7 @@ public class ManageReservationUIController implements Initializable {
                 txtNowMeter.getText(),
                 vehicleStatus,
                 txtComment.getText(),
-                Double.valueOf(String.valueOf(dpkPickUpDate.getValue())),
+                Double.valueOf(txtDeposit.getText()),
                 Double.valueOf(txtPriceForDay.getText())
         );
 
