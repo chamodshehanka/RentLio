@@ -17,9 +17,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -290,7 +292,49 @@ public class ManageReservationUIController implements Initializable {
     @FXML
     private void checkDateAction() {
         LocalDate localDate = dpkPickUpDate.getValue();
-        ChronoUnit.DAYS.between(localDate, localDate);
+        boolean dateStatus = dateDifference(String.valueOf(localDate));
+
+        if (!dateStatus){
+            dpkPickUpDate.setValue(LocalDate.now());
+            new AlertBuilder("warn", "Date Error", "Selected Date",
+                    "Select Date Again!");
+        }
+
+    }
+
+    private boolean dateDifference(String pickUpDate){
+        String todayDate = String.valueOf(LocalDate.now());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date1 = null;
+        Date date2 = null;
+        boolean dateStatus = false;
+
+        try {
+            date1 = sdf.parse(todayDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            date2 = sdf.parse(pickUpDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        assert date1 != null;
+        assert date2 != null;
+
+        // before() will return true if and only if date1 is before date2
+        if(date1.before(date2)){
+            dateStatus = true;
+        }
+
+        //equals() returns true if both the dates are equal
+        if(date1.equals(date2)){
+            dateStatus = true;
+        }
+        return dateStatus;
     }
 
     @FXML
