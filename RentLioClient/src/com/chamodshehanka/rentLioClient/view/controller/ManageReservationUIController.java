@@ -242,6 +242,7 @@ public class ManageReservationUIController implements Initializable {
             for (VehicleDTO vehicleDTO : vehicleDTOArrayList
                     ) {
                 if (vehicleDTO.getVehicleType().equals(vehicleType) && vehicleDTO.getVehicleBrand().equals(vehicleBrand)) {
+                    assert filteredVehicleList != null;
                     filteredVehicleList.add(vehicleDTO.getVehicleNumber());
                 } else {
                     filteredVehicleList = null;
