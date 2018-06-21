@@ -321,7 +321,7 @@ public class ManageReservationUIController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(cmbVehicleNo.getValue().substring(1, cmbVehicleNo.getValue().length() - 1));
+
         //Load Vehicle Object
         VehicleDTO vehicleDTO = null;
         try {
