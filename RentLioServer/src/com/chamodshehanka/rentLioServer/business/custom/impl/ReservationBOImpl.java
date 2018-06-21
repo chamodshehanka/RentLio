@@ -208,6 +208,7 @@ public class ReservationBOImpl implements ReservationBO {
             if (reservation != null){
                 reservationRepository.delete(reservation);
                 session.getTransaction().commit();
+                System.out.println("\b");
                 return true;
             }else {
                 return false;
@@ -224,7 +225,7 @@ public class ReservationBOImpl implements ReservationBO {
             Reservation reservation = reservationRepository.findById(reservationId);
             session.getTransaction().commit();
             if (reservation != null){
-                ReservationDTO reservationDTO = new ReservationDTO(
+                return new ReservationDTO(
                         reservation.getReservationId(),
                         reservation.getReceptionId(),
                         reservation.getCustomerId(),
@@ -247,7 +248,6 @@ public class ReservationBOImpl implements ReservationBO {
                         reservation.getDeposit(),
                         reservation.getPriceForDay()
                 );
-                return reservationDTO;
             }else {
                 return null;
             }
@@ -310,7 +310,9 @@ public class ReservationBOImpl implements ReservationBO {
             List<Reservation> reservationList = reservationRepository.findCustomerRepository(customerId);
             session.getTransaction().commit();
 
-            if (reservationList != null){
+            return reservationToDTO(reservationList);
+
+            /*if (reservationList != null){
                 List<ReservationDTO> reservationDTOList = new ArrayList<>();
 
                 for (Reservation reservation: reservationList
@@ -344,7 +346,42 @@ public class ReservationBOImpl implements ReservationBO {
                 return reservationDTOList;
             }else {
                 return null;
-            }
+            }*/
         }
+    }
+
+    private List<ReservationDTO> reservationToDTO(List<Reservation> reservationList){
+        assert reservationList != null;
+        List<ReservationDTO> reservationDTOList = new ArrayList<>();
+
+        for (Reservation reservation: reservationList
+                ) {
+            reservationDTOList.add(
+                    new ReservationDTO(
+                            reservation.getReservationId(),
+                            reservation.getReceptionId(),
+                            reservation.getCustomerId(),
+                            reservation.getCustomerName(),
+                            reservation.getCustomerTel(),
+                            reservation.getCustomerNIC(),
+                            reservation.getDriverId(),
+                            reservation.getDriverName(),
+                            reservation.getDriverTel(),
+                            reservation.getDriverNIC(),
+                            reservation.getcNumber(),
+                            reservation.getcType(),
+                            reservation.getcBrand(),
+                            reservation.getcKmrs(),
+                            reservation.getcImage(),
+                            reservation.getGetDate(),
+                            reservation.getNowMeter(),
+                            reservation.getStatus(),
+                            reservation.getComment(),
+                            reservation.getDeposit(),
+                            reservation.getPriceForDay()
+                    )
+            );
+        }
+        return reservationDTOList;
     }
 }

@@ -17,7 +17,7 @@ public class Reservation {
     private String receptionId;
     private String customerId;
     private String customerName;
-    private String customerTel;
+    private int customerTel;
     private String customerNIC;
 
     private String driverId;
@@ -56,7 +56,7 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(String reservationId, String receptionId, String customerId, String customerName, String customerTel, String customerNIC, String driverId, String driverName, String driverTel, String driverNIC, String cNumber, String cType, String cBrand, String cKmrs, String cImage, String getDate, String nowMeter, String status, String comment, double deposit, double priceForDay, Customer customer, Driver driver, Vehicle vehicle, Payment payment, Reception reception) {
+    public Reservation(String reservationId, String receptionId, String customerId, String customerName, int customerTel, String customerNIC, String driverId, String driverName, String driverTel, String driverNIC, String cNumber, String cType, String cBrand, String cKmrs, String cImage, String getDate, String nowMeter, String status, String comment, double deposit, double priceForDay, Customer customer, Driver driver, Vehicle vehicle, Payment payment, Reception reception) {
         this.reservationId = reservationId;
         this.receptionId = receptionId;
         this.customerId = customerId;
@@ -92,7 +92,7 @@ public class Reservation {
                 ", receptionId='" + receptionId + '\'' +
                 ", customerId='" + customerId + '\'' +
                 ", customerName='" + customerName + '\'' +
-                ", customerTel='" + customerTel + '\'' +
+                ", customerTel=" + customerTel +
                 ", customerNIC='" + customerNIC + '\'' +
                 ", driverId='" + driverId + '\'' +
                 ", driverName='" + driverName + '\'' +
@@ -149,11 +149,11 @@ public class Reservation {
         this.customerName = customerName;
     }
 
-    public String getCustomerTel() {
+    public int getCustomerTel() {
         return customerTel;
     }
 
-    public void setCustomerTel(String customerTel) {
+    public void setCustomerTel(int customerTel) {
         this.customerTel = customerTel;
     }
 
