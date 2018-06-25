@@ -158,7 +158,7 @@ public class ReservationBOImpl implements ReservationBO {
             }
 
             Vehicle vehicle = vehicleRepository.findById(reservationDTO.getcNumber());
-            Payment payment = null;
+            Payment payment = new Payment();
 
             Reception reception = receptionRepository.findById(reservationDTO.getReceptionId());
 
@@ -259,10 +259,8 @@ public class ReservationBOImpl implements ReservationBO {
         try (Session session = HibernateUtil.getSessionFactory().openSession()){
             session.beginTransaction();
             reservationRepository.setSession(session);
-            session.getTransaction().commit();
             List<Reservation> reservationList = reservationRepository.findAll();
             session.getTransaction().commit();
-
             if (reservationList != null){
                 List<ReservationDTO> reservationDTOList = new ArrayList<>();
 

@@ -62,11 +62,6 @@ class IDController {
                 reservationDTO = (ReservationDTO) list.get(0);
                 lastId = reservationDTO.getReservationId();
                 break;
-            case "vehicle":list = VehicleController.getAllVehicles();
-                Collections.reverse(list);
-                vehicleDTO = (VehicleDTO) list.get(0);
-                lastId = vehicleDTO.getVehicleNumber();
-                break;
             default:
                 System.out.println("Invalid table");
 

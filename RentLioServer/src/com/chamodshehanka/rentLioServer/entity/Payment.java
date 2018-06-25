@@ -23,7 +23,7 @@ public class Payment {
     private double damage;
     private String afterKM;
     private double extraKMPrice;
-    private double paymentDay;
+    private String paymentDay;
     private double totalPrice;
     private double discount;
     private double totalLastPrice;
@@ -31,7 +31,7 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(String paymentId, String reservationId, String date, String customerId, String carNo, String receptionId, String driverId, double driverPayment, double deposit, double damage, String afterKM, double extraKMPrice, double paymentDay, double totalPrice, double discount, double totalLastPrice) {
+    public Payment(String paymentId, String reservationId, String date, String customerId, String carNo, String receptionId, String driverId, double driverPayment, double deposit, double damage, String afterKM, double extraKMPrice, String paymentDay, double totalPrice, double discount, double totalLastPrice) {
         this.paymentId = paymentId;
         this.reservationId = reservationId;
         this.date = date;
@@ -65,7 +65,7 @@ public class Payment {
                 ", damage=" + damage +
                 ", afterKM='" + afterKM + '\'' +
                 ", extraKMPrice=" + extraKMPrice +
-                ", paymentDay=" + paymentDay +
+                ", paymentDay='" + paymentDay + '\'' +
                 ", totalPrice=" + totalPrice +
                 ", discount=" + discount +
                 ", totalLastPrice=" + totalLastPrice +
@@ -168,11 +168,11 @@ public class Payment {
         this.extraKMPrice = extraKMPrice;
     }
 
-    public double getPaymentDay() {
+    public String getPaymentDay() {
         return paymentDay;
     }
 
-    public void setPaymentDay(double paymentDay) {
+    public void setPaymentDay(String paymentDay) {
         this.paymentDay = paymentDay;
     }
 
