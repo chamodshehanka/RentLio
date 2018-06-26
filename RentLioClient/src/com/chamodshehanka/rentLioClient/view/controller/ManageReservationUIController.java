@@ -101,7 +101,7 @@ public class ManageReservationUIController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        generateReservationID();
+//        generateReservationID();
         txtReservationID.setText("E001");
         setUpUIComponents();
         receptionID = "R001";
@@ -199,6 +199,7 @@ public class ManageReservationUIController implements Initializable {
         cmbVehicleBrand.getItems().addAll("Toyota", "Honda", "Suzuki");
 
         setVehicleDefaultImage();
+        dpkPickUpDate.setValue(LocalDate.now());
     }
 
     private void setVehicleDefaultImage() {
