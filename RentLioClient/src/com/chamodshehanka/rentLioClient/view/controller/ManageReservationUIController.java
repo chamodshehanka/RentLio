@@ -431,6 +431,28 @@ public class ManageReservationUIController implements Initializable {
 
     @FXML
     private void cancelReservationAction() {
+
+        //Customer Details
+        txtCustomerID.setText("");
+        txtCustomerName.setText("");
+
+        //Driver Details
+        chbxDriver.setSelected(false);
+        txtDriverID.setText("");
+        txtDriverName.setText("");
+        txtDriverNIC.setText("");
+        txtDriverTel.setText("");
+
+        //Vehicle Details
+        txtKMRs.setText("");
+        txtNowMeter.setText("");
+        txtDeposit.setText("");
+        txtPriceForDay.setText("");
+        chbxGetVehicleNow.setSelected(false);
+        txtComment.setText("");
+        setVehicleDefaultImage();
+
+        txtCustomerID.requestFocus();
     }
 
 }
