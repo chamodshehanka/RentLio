@@ -353,6 +353,7 @@ public class ManageReservationUIController implements Initializable {
     private void confirmReservationAction() {
 
         String vehicleStatus;
+        String vehicleNo = cmbVehicleNo.getValue().substring(1, cmbVehicleNo.getValue().length() - 1);
         if (isVehicleNow) {
             vehicleStatus = "Reserved";
         } else {
@@ -371,7 +372,7 @@ public class ManageReservationUIController implements Initializable {
         VehicleDTO vehicleDTO = null;
         try {
             vehicleDTO = VehicleController
-                    .getVehicleById(cmbVehicleNo.getValue().substring(1, cmbVehicleNo.getValue().length() - 1));
+                    .getVehicleById(vehicleNo);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -399,7 +400,7 @@ public class ManageReservationUIController implements Initializable {
                 txtDriverTel.getText(),
                 txtDriverNIC.getText(),
 
-                cmbVehicleNo.getValue(),
+                vehicleNo,
                 cmbVehicleType.getValue(),
                 cmbVehicleBrand.getValue(),
                 txtKMRs.getText(),
@@ -412,7 +413,9 @@ public class ManageReservationUIController implements Initializable {
                 Double.valueOf(txtDeposit.getText()),
                 Double.valueOf(txtPriceForDay.getText())
         );
-
+        System.out.println("VehicleDTO : " + vehicleDTO);
+        System.out.println("DriverDTO : " + driverDTO);
+        System.out.println("ReservationDTO : " + reservationDTO);
         try {
             boolean isReservationAdded = ReservationController.addReservation(reservationDTO,vehicleDTO,driverDTO);
             if (isReservationAdded){
