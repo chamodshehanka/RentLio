@@ -413,9 +413,7 @@ public class ManageReservationUIController implements Initializable {
                 Double.valueOf(txtDeposit.getText()),
                 Double.valueOf(txtPriceForDay.getText())
         );
-        System.out.println("VehicleDTO : " + vehicleDTO);
-        System.out.println("DriverDTO : " + driverDTO);
-        System.out.println("ReservationDTO : " + reservationDTO);
+
         try {
             boolean isReservationAdded = ReservationController.addReservation(reservationDTO,vehicleDTO,driverDTO);
             if (isReservationAdded){
