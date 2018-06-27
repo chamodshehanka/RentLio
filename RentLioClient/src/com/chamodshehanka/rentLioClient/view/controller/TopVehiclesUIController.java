@@ -1,5 +1,6 @@
 package com.chamodshehanka.rentLioClient.view.controller;
 
+import com.chamodshehanka.rentLioClient.util.AlertBuilder;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,7 +29,15 @@ public class TopVehiclesUIController implements Initializable{
     @FXML
     private void setPieChartGraph(){
         Integer chartType = chbxTest.getValue();
-        System.out.println(chartType);
+
+        //switch by vehicle type
+        switch (chartType){
+            case 1 : break;
+            case 2 : break;
+            case 3 : break;
+            default : new AlertBuilder("warn","Top Vehicles","Top Vehicle Graph",
+                    "Invalid type of graph !!");
+        }
     }
 
     private void setComboBoxValues(){
