@@ -31,8 +31,8 @@ public class ReservationRepositoryImpl extends SuperRepositoryImpl<Reservation, 
         }
     }
 
-    /*@Override
+    @Override
     public void setSession(Session session){
         this.session = session;
-    }*/
+    }
 }
