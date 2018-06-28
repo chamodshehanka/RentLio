@@ -46,7 +46,7 @@ public class ReservationBOImpl implements ReservationBO {
         Customer customer;
         Driver driver;
         Vehicle vehicle;
-        Payment payment = null;
+        Payment payment = new Payment("PPPP","RRRR","2018-06-28","CCCC","XXXX","RRRR","DDDD",0.0,0.0,0.0,"",0.0,"",0.0,0.0,0.0);
         Reception reception;
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()){
@@ -108,18 +108,13 @@ public class ReservationBOImpl implements ReservationBO {
                 vehicle.setStatus("Reserved");
                 vehicleRepository.setSession(session);
                 vehicleRepository.update(vehicle);
-                boolean isUpdated = true;
-                if (isUpdated){
-                    if (driverDTO != null){
-                        driverRepository.setSession(session);
-                        driver.setState(driverDTO.getState());
-                        if (driverRepository.update(driver)){
-                            transaction.commit();
-                            return true;
-                        }else {
-                            transaction.rollback();
-                            return false;
-                        }
+
+                if (driverDTO != null){
+                    driverRepository.setSession(session);
+                    driver.setState(driverDTO.getState());
+                    if (driverRepository.update(driver)){
+                        transaction.commit();
+                        return true;
                     }else {
                         transaction.rollback();
                         return false;
@@ -135,6 +130,8 @@ public class ReservationBOImpl implements ReservationBO {
         }finally {
             if (sessionOuter != null) {
                 sessionOuter.close();
+            }else {
+                System.out.println("Outer Session is null !");
             }
         }
     }
@@ -158,7 +155,7 @@ public class ReservationBOImpl implements ReservationBO {
             }
 
             Vehicle vehicle = vehicleRepository.findById(reservationDTO.getcNumber());
-            Payment payment = new Payment();
+            Payment payment = null;
 
             Reception reception = receptionRepository.findById(reservationDTO.getReceptionId());
 
