@@ -19,7 +19,6 @@ public class ReportsUIController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     @FXML
