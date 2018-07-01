@@ -29,7 +29,7 @@ MCV Design pattern.
 
 ## Deployment
 
-Download this
+Install JDK
 
 ## Built With
 
