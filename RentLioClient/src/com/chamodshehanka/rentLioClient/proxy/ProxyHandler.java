@@ -48,14 +48,14 @@ public class ProxyHandler implements ServicesFactory {
     public SuperService getService(ServicesType servicesType) {
         switch (servicesType){
             case ADMIN : return adminService;
-            case VEHICLE: return vehicleService;
-            case BRANCH: return branchService;
-            case CUSTOMER: return customerService;
-            case DRIVER: return driverService;
-            case PAYMENT: return paymentService;
-            case RECEPTION: return receptionService;
-            case RESERVATION: return reservationService;
-            default: return null;
+            case VEHICLE : return vehicleService;
+            case BRANCH : return branchService;
+            case CUSTOMER : return customerService;
+            case DRIVER : return driverService;
+            case PAYMENT : return paymentService;
+            case RECEPTION : return receptionService;
+            case RESERVATION : return reservationService;
+            default : return null;
         }
     }
 }
