@@ -34,8 +34,8 @@ public class SplashScreenUIController implements Initializable{
         StartRentLio.isSplashLoaded = true;
         AnchorPane splashPane = null;
         try {
-            splashPane = FXMLLoader
-                    .load(getClass().getResource("/com/chamodshehanka/rentLioClient/view/fxml/SplashScreenUI.fxml"));
+            splashPane = FXMLLoader.load(getClass()
+                    .getResource("/com/chamodshehanka/rentLioClient/view/fxml/SplashScreenUI.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
