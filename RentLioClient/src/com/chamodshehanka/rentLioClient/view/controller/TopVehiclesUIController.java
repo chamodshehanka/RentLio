@@ -35,8 +35,7 @@ public class TopVehiclesUIController implements Initializable{
         //switch by vehicle type
         switch (chartType){
             case 1 :
-                    ObservableList<PieChart.Data> pieChartData =
-                    FXCollections.observableArrayList(
+                    ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                             new PieChart.Data("Prius", 13),
                             new PieChart.Data("Audi A7", 25),
                             new PieChart.Data("Audi R8", 10),
