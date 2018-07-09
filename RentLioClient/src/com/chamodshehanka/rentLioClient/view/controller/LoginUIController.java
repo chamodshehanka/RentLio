@@ -62,8 +62,9 @@ public class LoginUIController implements Initializable {
                 }else {
                     Alert adminLoginFailedAlert = new Alert(Alert.AlertType.ERROR);
                     DialogPane dialogPane = adminLoginFailedAlert.getDialogPane();
-                    dialogPane.getStylesheets().add(
-                            getClass().getResource("/com/chamodshehanka/rentLioClient/view/css/dialog-pane-styles.css")
+                    dialogPane
+                            .getStylesheets().add(getClass()
+                            .getResource("/com/chamodshehanka/rentLioClient/view/css/dialog-pane-styles.css")
                                     .toExternalForm());
                     dialogPane.getStyleClass().add("myDialog");
                     adminLoginFailedAlert.setTitle("Admin Login");
