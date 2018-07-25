@@ -61,6 +61,10 @@ public class TopVehiclesUIController implements Initializable{
         }
     }
 
+    private void getPieChartData(){
+
+    }
+
     private void setComboBoxValues(){
         chbxTest.getItems().addAll(1,2,3);
     }
