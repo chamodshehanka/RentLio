@@ -86,13 +86,17 @@ public class LoginUIController implements Initializable {
             for (ReceptionDTO receptionDTO: receptionDTOList
                  ) {
                 if (receptionDTO.getName().equals(userName) && receptionDTO.getPassword().equals(password)){
-                    System.out.println();
+                    loadReceptionDashBoardUI();
                 }else {
                     new AlertBuilder("warn","Reception Login",
                             "Reception Login Failed","User Name or password incorrect");
                 }
             }
         }
+    }
+
+    private void loadReceptionDashBoardUI(){
+        System.out.println("Make Reception DashBoard");
     }
 
     private void loadDashBoardUI(){
