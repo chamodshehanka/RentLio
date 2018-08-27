@@ -2,6 +2,7 @@ package com.chamodshehanka.rentLioClient.view.controller;
 
 import com.chamodshehanka.rentLioClient.controller.AdminController;
 import com.chamodshehanka.rentLioClient.controller.ReceptionController;
+import com.chamodshehanka.rentLioClient.util.AlertBuilder;
 import com.chamodshehanka.rentLioCommon.dto.AdminDTO;
 import com.chamodshehanka.rentLioCommon.dto.ReceptionDTO;
 import com.jfoenix.controls.JFXPasswordField;
@@ -84,8 +85,11 @@ public class LoginUIController implements Initializable {
         if (!userName.isEmpty() && !password.isEmpty()){
             for (ReceptionDTO receptionDTO: receptionDTOList
                  ) {
-                if (receptionDTO.getName().equals(userName)){
+                if (receptionDTO.getName().equals(userName) && receptionDTO.getPassword().equals(password)){
                     System.out.println();
+                }else {
+                    new AlertBuilder("warn","Reception Login",
+                            "Reception Login Failed","User Name or password incorrect");
                 }
             }
         }
