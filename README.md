@@ -23,13 +23,19 @@ End with an example of getting some data out of the system or using it for a lit
 
 
 ### And coding style tests
-
-MCV Design pattern.
+Used Design Patterns
+* MVC 
+* Factory
+* Abstract Factory
+* Singleton 
+* Observer
+* Facade 
 
 
 ## Deployment
-
-Install JDK
+Install JDK 9.0 or higher
+Install Intellij IDEA 
+Install MySQL
 
 ## Built With
 
