@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDrawer?>
-<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.layout.AnchorPane?>
-
 <AnchorPane fx:id="rootPane" prefHeight="700.0" prefWidth="1000.0" styleClass="root" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentLioClient.view.controller.DashBoardUIController">
    <children>
       <AnchorPane prefHeight="35.0" prefWidth="1000.0" styleClass="title-bar">
          <children>
             <JFXButton layoutX="11.0" layoutY="5.0" onAction="#windowClose" prefHeight="25.0" prefWidth="25.0" styleClass="close-button" />
             <JFXButton layoutX="44.0" layoutY="5.0" prefHeight="25.0" prefWidth="25.0" styleClass="minimize-button" />
-            <JFXButton layoutX="77.0" layoutY="5.0" prefHeight="25.0" prefWidth="25.0" styleClass="maximize-button" />
+            <JFXButton layoutX="77.0" layoutY="5.0" onAction="#windowMinimize" prefHeight="25.0" prefWidth="25.0" styleClass="maximize-button" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="paneTopHeader" layoutY="35.0" prefHeight="40.0" prefWidth="1000.0" styleClass="top-header">
