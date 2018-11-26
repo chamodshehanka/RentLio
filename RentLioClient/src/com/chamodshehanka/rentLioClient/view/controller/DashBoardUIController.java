@@ -117,6 +117,6 @@ public class DashBoardUIController implements Initializable {
 
     @FXML
     private void windowMinimize() {
-//        primaryStage.setIconified(true);
+//        primaryStage.setIconified(false);
     }
 }
