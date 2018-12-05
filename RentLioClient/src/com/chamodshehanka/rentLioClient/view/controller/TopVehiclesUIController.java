@@ -43,7 +43,7 @@ public class TopVehiclesUIController implements Initializable{
                             new PieChart.Data("Premio", 30));
 
                     topVehiclesChart.setData(pieChartData);
-                    topVehiclesChart.setTitle("Imported Fruits");
+                    topVehiclesChart.setTitle("Top Vehicles");
                 break;
             case 2 :
                 pieChartData = FXCollections.observableArrayList(
