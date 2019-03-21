@@ -1,29 +1,26 @@
 ![Logo](https://github.com/Shehanka/RentLio/blob/master/RentLioClient/src/com/chamodshehanka/rentLioClient/view/images/rentlio-background.jpg)
 # RentLio
 This is a vehicle reservation system. Which is made with JavaFX and also using hibernate and RMI. \
-And also moder UI and UX concepts and  [jfoenix](http://www.jfoenix.com/).
+And also modern UI and UX concepts and  [jfoenix](http://www.jfoenix.com/).
 
 [![official JetBrains project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![JetBrains Plugins](https://img.shields.io/jetbrains/plugin/v/9630-a8translate.svg)](https://plugins.jetbrains.com/)
+
+## UIs - [View on Behance](https://www.behance.net/gallery/68219605/RentLIO)
+
 ## Getting Started
 
- 
-
-
+1. Clone the repository.
+2. Install JDK 9.0 or higher.
+3. Install MySQL.
+4. Run MySQL Script.
+5. Run StartServer.java.
+6. Run RentLIOStart.java.
+7. Input login credintials.
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
 
-
-
-### Break down into end to end tests
-
-
-
-
-
-### And coding style tests
-Used Design Patterns
+### Used Design Patterns
 * MVC 
 * Factory
 * Abstract Factory
@@ -33,9 +30,8 @@ Used Design Patterns
 
 
 ## Deployment
-Install JDK 9.0 or higher
-Install Intellij IDEA 
-Install MySQL
+
+* Create JAR File and Execute
 
 ## Built With
 
