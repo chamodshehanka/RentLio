@@ -1,4 +1,5 @@
 # Intellij IDEA
 /.idea
+/out
 
 .iml
