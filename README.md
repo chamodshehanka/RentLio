@@ -16,7 +16,7 @@ And also modern UI and UX concepts and  [jfoenix](http://www.jfoenix.com/).
 
 ## Getting Started
 
-1. Clone the repository.
+1. Clone the repository.  `git clone https://github.com/Shehanka/RentLio.git`
 2. Install JDK 9.0 or higher.
 3. Install MySQL.
 4. Run MySQL Script.
