@@ -17,14 +17,14 @@ And also modern UI and UX concepts and  [jfoenix](http://www.jfoenix.com/).
 ## Getting Started
 
 1. Clone the repository.  `git clone https://github.com/Shehanka/RentLio.git`
-2. Install JDK 9.0 or higher.
+2. Install OpenJDK 11.0 or higher.
 3. Install MySQL.
 4. Run MySQL Script.
-5. Run StartServer.java.
+5. Run `mvn install`
+6. Run `mvn exec:java` on RentLioClient.
 6. Run RentLIOStart.java.
-7. Input login credintials.
+7. Input login credentials.
 End with an example of getting some data out of the system or using it for a little demo
-
 
 ### Used Design Patterns
 * MVC 
@@ -33,7 +33,6 @@ End with an example of getting some data out of the system or using it for a lit
 * Singleton 
 * Observer
 * Facade 
-
 
 ## Deployment
 
@@ -60,4 +59,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Shehanka/RentLio/blob/master/LICENSE) file for details
+This project is licensed under the Apache License 2.0 - see the [LICENSE.md](https://github.com/Shehanka/RentLio/blob/master/LICENSE) file for details
