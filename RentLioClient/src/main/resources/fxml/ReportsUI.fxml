@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:id="rootReports" prefHeight="625.0" prefWidth="1000.0" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentlio.client.view.controller.ReportsUIController">
+   <children>
+      <JFXButton layoutX="214.0" layoutY="205.0" onAction="#loadTopVehicleUI" prefWidth="133.0" styleClass="button-green" text="Top Customers" />
+   </children>
+</AnchorPane>

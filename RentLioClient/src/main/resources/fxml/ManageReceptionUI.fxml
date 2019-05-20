@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="625.0" prefWidth="1000.0" styleClass="root" stylesheets="@../css/common-styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.rentlio.client.view.controller.ManageReceptionUIController">
+   <children>
+      <AnchorPane layoutX="40.0" layoutY="56.0" prefHeight="170.0" prefWidth="921.0" styleClass="container">
+         <children>
+            <AnchorPane prefHeight="10.0" prefWidth="950.0" styleClass="container-header" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane layoutY="160.0" prefHeight="10.0" prefWidth="950.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <JFXTextField fx:id="txtReceptionId" focusColor="WHITE" labelFloat="true" layoutX="46.0" layoutY="69.0" onAction="#getReceptionByID" prefHeight="28.0" prefWidth="83.0" promptText="Reception ID" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="234.0" layoutY="113.0" onAction="#AddReceptionAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Add">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="364.0" layoutY="113.0" onAction="#updateReceptionAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Update">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="494.0" layoutY="113.0" onAction="#getReceptionByID" prefHeight="25.0" prefWidth="90.0" styleClass="button-green" text="Search">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="624.0" layoutY="113.0" onAction="#deleteReceptionAction" prefHeight="25.0" prefWidth="90.0" styleClass="button-red" text="Delete">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXComboBox fx:id="cmbBranchName" focusColor="WHITE" labelFloat="true" layoutX="149.0" layoutY="73.0" prefHeight="25.0" prefWidth="111.0" promptText="Branch Name" styleClass="text-field-white" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtReceptionName" focusColor="WHITE" labelFloat="true" layoutX="281.0" layoutY="69.0" prefHeight="28.0" prefWidth="83.0" promptText="Name" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtReceptionAddress" focusColor="WHITE" labelFloat="true" layoutX="382.0" layoutY="69.0" prefHeight="28.0" prefWidth="83.0" promptText="Address" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtReceptionEmail" focusColor="WHITE" labelFloat="true" layoutX="486.0" layoutY="69.0" prefHeight="28.0" prefWidth="134.0" promptText="Email" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtReceptionTel" focusColor="WHITE" labelFloat="true" layoutX="644.0" layoutY="69.0" prefHeight="28.0" prefWidth="83.0" promptText="Telephone" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtReceptionNIC" focusColor="WHITE" labelFloat="true" layoutX="757.0" layoutY="69.0" prefHeight="28.0" prefWidth="111.0" promptText="NIC" styleClass="text-field-white" unFocusColor="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="398.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGE RECEPTIONS">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
